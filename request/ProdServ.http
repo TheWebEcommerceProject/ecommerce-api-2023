@@ -1,0 +1,309 @@
+@api = http://localhost:3020/api/v1/prod-serv
+#@api = http://187.229.22.99:8010/api/v1/prod-serv
+
+### GET
+GET {{api}}
+
+### GET ITEM
+GET {{api}}/1
+
+### GET ITEM
+GET {{api}}/1?keyType=OK
+
+### GET ITEM
+GET {{api}}/15058?keyType=BK
+
+### DELETE ITEM PRODUCTO Y/O SERVICIO
+DELETE {{api}}/100?keyType=OK
+
+### POST ITEM PRODUCTO Y/O SERVICIO
+POST {{api}}
+Content-Type: application/json
+
+{ 
+    "IdProdServPK" : 100, 
+    "IdProdServOK" : "100", 
+    "IdProdServBK" : "ENSA100", 
+    "IdProdServMaOK" : "1", 
+    "IdProdServMaBK" : "1", 
+    "DesProdServ" : "ENFRIADOR VERTICAL G326 2PTAS CO2", 
+    "IdUMedidaOK" : "1", 
+    "IdUMedidaBK" : "1", 
+    "cat_prod_serv_estatus" : [
+        {
+            "IdTipoGenEstatusOK" : "4", 
+            "IdGenEstatusOK" : "23", 
+            "TipoEstatus" : "VIGENTE", 
+            "Actual" : "S", 
+            "Observacion" : "Ninguna", 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC"
+            }
+        }
+    ], 
+    "cat_prod_serv_paquetes" : [
+        {
+            "IdProdServOK" : "1", 
+            "IdProdServBK" : "1", 
+            "DesProdServ" : "ENFRIADOR VERTICAL G326 2PTAS CO2", 
+            "Cantidad" : 1.0, 
+            "IdUMedidaOK" : "1", 
+            "IdUMedidaBK" : "1", 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC", 
+                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioMod" : "FIBARRAC", 
+                "Activo" : "S", 
+                "Borrado" : "N"
+            }
+        }
+    ], 
+    "cat_prod_serv_archivos" : [
+        {
+            "DesArchivo" : "Foto del producto", 
+            "RutaArchivo" : "https://images.pexels.com/photos/3230214/pexels-photo-3230214.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260", 
+            "IdTipoGenArchivoOK" : "7", 
+            "IdGenArchivoOK" : "19", 
+            "TipoArchivo" : "IMAGEN", 
+            "IdTipoGenSeccionOK" : "", 
+            "IdGenSeccionOK" : "", 
+            "TipoSeccion" : "", 
+            "Secuencia" : 1, 
+            "Principal" : "S", 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC", 
+                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioMod" : "FIBARRAC", 
+                "Activo" : "S", 
+                "Borrado" : "N"
+            }
+        }
+    ], 
+    "cat_prod_serv_info_adicional" : [
+        {
+            "IdEtiqueta" : "IDMODELO", 
+            "Etiqueta" : "MODELO", 
+            "Valor" : "G326 2 PTAS CO2", 
+            "IdTipoGenSeccionOK" : "10", 
+            "IdGenSeccionOK" : "33", 
+            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
+            "Secuencia" : 10, 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC", 
+                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioMod" : "FIBARRAC", 
+                "Activo" : "S", 
+                "Borrado" : "N"
+            }
+        }, 
+        {
+            "IdEtiqueta" : "IDMARCA", 
+            "Etiqueta" : "MARCA", 
+            "Valor" : "IMBERA", 
+            "IdTipoGenSeccionOK" : "10", 
+            "IdGenSeccionOK" : "33", 
+            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
+            "Secuencia" : 20, 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC", 
+                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioMod" : "FIBARRAC", 
+                "Activo" : "S", 
+                "Borrado" : "N"
+            }
+        }, 
+        {
+            "IdEtiqueta" : "IDDIMENCIONMM", 
+            "Etiqueta" : "DIMENCIÓN EN MM", 
+            "Valor" : "1985/1000/658", 
+            "IdTipoGenSeccionOK" : "10", 
+            "IdGenSeccionOK" : "33", 
+            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
+            "Secuencia" : 30, 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC", 
+                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioMod" : "FIBARRAC", 
+                "Activo" : "S", 
+                "Borrado" : "N"
+            }
+        }, 
+        {
+            "IdEtiqueta" : "IDPESOKG", 
+            "Etiqueta" : "PESO EN KG", 
+            "Valor" : "152.500", 
+            "IdTipoGenSeccionOK" : "10", 
+            "IdGenSeccionOK" : "33", 
+            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
+            "Secuencia" : 40, 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC", 
+                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioMod" : "FIBARRAC", 
+                "Activo" : "S", 
+                "Borrado" : "N"
+            }
+        }
+    ], 
+    "detail_row" : {
+        "FechaReg" : "2022-01-05T10:20:33+07:00", 
+        "UsuarioReg" : "FIBARRAC", 
+        "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+        "UsuarioMod" : "FIBARRAC", 
+        "Activo" : "S", 
+        "Borrado" : "N"
+    }
+}
+
+### PUT ITEM PRODUCTO Y/O SERVICIO
+PUT {{api}}/100?keyType=OK
+Content-Type: application/json
+
+{ 
+    "IdProdServPK" : 100, 
+    "IdProdServOK" : "100", 
+    "IdProdServBK" : "ENSA100", 
+    "IdProdServMaOK" : "1", 
+    "IdProdServMaBK" : "1", 
+    "DesProdServ" : "ENFRIADOR HORIZONTAL G326 2PTAS CO2", 
+    "IdUMedidaOK" : "1", 
+    "IdUMedidaBK" : "1", 
+    "cat_prod_serv_estatus" : [
+        {
+            "IdTipoGenEstatusOK" : "4", 
+            "IdGenEstatusOK" : "23", 
+            "TipoEstatus" : "VIGENTE", 
+            "Actual" : "S", 
+            "Observacion" : "Ninguna", 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC"
+            }
+        }
+    ], 
+    "cat_prod_serv_paquetes" : [
+        {
+            "IdProdServOK" : "1", 
+            "IdProdServBK" : "1", 
+            "DesProdServ" : "ENFRIADOR VERTICAL G326 2PTAS CO2", 
+            "Cantidad" : 1.0, 
+            "IdUMedidaOK" : "1", 
+            "IdUMedidaBK" : "1", 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC", 
+                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioMod" : "FIBARRAC", 
+                "Activo" : "S", 
+                "Borrado" : "N"
+            }
+        }
+    ], 
+    "cat_prod_serv_archivos" : [
+        {
+            "DesArchivo" : "Foto del producto", 
+            "RutaArchivo" : "https://images.pexels.com/photos/3230214/pexels-photo-3230214.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260", 
+            "IdTipoGenArchivoOK" : "7", 
+            "IdGenArchivoOK" : "19", 
+            "TipoArchivo" : "IMAGEN", 
+            "IdTipoGenSeccionOK" : "", 
+            "IdGenSeccionOK" : "", 
+            "TipoSeccion" : "", 
+            "Secuencia" : 1, 
+            "Principal" : "S", 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC", 
+                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioMod" : "FIBARRAC", 
+                "Activo" : "S", 
+                "Borrado" : "N"
+            }
+        }
+    ], 
+    "cat_prod_serv_info_adicional" : [
+        {
+            "IdEtiqueta" : "IDMODELO", 
+            "Etiqueta" : "MODELO", 
+            "Valor" : "G326 2 PTAS CO2", 
+            "IdTipoGenSeccionOK" : "10", 
+            "IdGenSeccionOK" : "33", 
+            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
+            "Secuencia" : 10, 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC", 
+                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioMod" : "FIBARRAC", 
+                "Activo" : "S", 
+                "Borrado" : "N"
+            }
+        }, 
+        {
+            "IdEtiqueta" : "IDMARCA", 
+            "Etiqueta" : "MARCA", 
+            "Valor" : "IMBERA", 
+            "IdTipoGenSeccionOK" : "10", 
+            "IdGenSeccionOK" : "33", 
+            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
+            "Secuencia" : 20, 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC", 
+                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioMod" : "FIBARRAC", 
+                "Activo" : "S", 
+                "Borrado" : "N"
+            }
+        }, 
+        {
+            "IdEtiqueta" : "IDDIMENCIONMM", 
+            "Etiqueta" : "DIMENCIÓN EN MM", 
+            "Valor" : "1985/1000/658", 
+            "IdTipoGenSeccionOK" : "10", 
+            "IdGenSeccionOK" : "33", 
+            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
+            "Secuencia" : 30, 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC", 
+                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioMod" : "FIBARRAC", 
+                "Activo" : "S", 
+                "Borrado" : "N"
+            }
+        }, 
+        {
+            "IdEtiqueta" : "IDPESOKG", 
+            "Etiqueta" : "PESO EN KG", 
+            "Valor" : "152.500", 
+            "IdTipoGenSeccionOK" : "10", 
+            "IdGenSeccionOK" : "33", 
+            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
+            "Secuencia" : 40, 
+            "detail_row" : {
+                "FechaReg" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioReg" : "FIBARRAC", 
+                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+                "UsuarioMod" : "FIBARRAC", 
+                "Activo" : "S", 
+                "Borrado" : "N"
+            }
+        }
+    ], 
+    "detail_row" : {
+        "FechaReg" : "2022-01-05T10:20:33+07:00", 
+        "UsuarioReg" : "FIBARRAC", 
+        "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
+        "UsuarioMod" : "FIBARRAC", 
+        "Activo" : "S", 
+        "Borrado" : "N"
+    }
+}
