@@ -27,13 +27,12 @@ Crea un archivo .env en la carpeta raíz del proyecto para configurar las variab
 ```
 HOST='localhost'
 PORT=3020
-#API_URL=/api/v1
-#API_URL=/api
-CONNECTION_STRING=''
+API_URL=/api
+CONNECTION_STRING='mongodb://AdminUser:florecitarockera@127.0.0.1:27017/?authMechanism=SCRAM-SHA-256&authSource=db_ecommerce'
 DB_USER='AdminUser'
-DB_PASSWORD=''
-DATABASE=''
-CLUSTER=''
+DB_PASSWORD='florecitarockera'
+DATABASE='db_ecommerce'
+CLUSTER='127.0.0.1:27017'
 ```
 
 ### Ejecutar el Proyecto
