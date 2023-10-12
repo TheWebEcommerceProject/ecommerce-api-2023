@@ -1,17 +1,7 @@
-@api = http://localhost:3020/api/v1/prod-serv
-#@api = http://187.229.22.99:8010/api/v1/prod-serv
+@api = http://localhost:3020/api/pwa/prodserv
 
 ### GET
 GET {{api}}
-
-### GET ITEM
-GET {{api}}/1
-
-### GET ITEM
-GET {{api}}/1?keyType=OK
-
-### GET ITEM
-GET {{api}}/15058?keyType=BK
 
 ### DELETE ITEM PRODUCTO Y/O SERVICIO
 DELETE {{api}}/100?keyType=OK
