@@ -56,7 +56,7 @@ export const getProdServAll = async () => {
 };
 
 // GET ONE eCOMMERCE
-export const getProdServOne = async () => {
+export const getProdServOne = async (idProdServ) => {
   let bitacora = BITACORA();
   let data = DATA();
 
@@ -67,7 +67,7 @@ export const getProdServOne = async () => {
     data.process =
       "Extraer uno de los productos o servicios de la coleccion de cat_prod_serv";
 
-    const ProdServOne = await prodServs.find().then((prodServ) => {
+    const ProdServOne = await prodServs.findOne({ IdProdServOK: idProdServ }).then((prodServ) => {
       if (!prodServ) {
         data.status = 404;
         data.messageDEV = "La base de datos no tiene productos y/o servicios";

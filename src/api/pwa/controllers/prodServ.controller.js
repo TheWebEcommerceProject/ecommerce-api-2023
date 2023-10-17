@@ -19,7 +19,10 @@ export const getProdServAll = async (req, res, next) => {
 // GET ONE eCOMMERCE
 export const getProdServOne = async (req, res, next) => {
   try {
-    const ProdServOne = await prodServServices.getProdServOne();
+
+    const { id } = req.params;
+
+    const ProdServOne = await prodServServices.getProdServOne(id);
     if (ProdServOne) {
       return res.status(ProdServOne.status).json(ProdServOne);
     }

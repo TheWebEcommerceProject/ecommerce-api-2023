@@ -1,7 +1,10 @@
 @api = http://localhost:3020/api/pwa/prodserv
 
-### GET
+### GET ALL
 GET {{api}}
+
+### GET ONE
+GET {{api}}/100
 
 ### DELETE ITEM PRODUCTO Y/O SERVICIO
 DELETE {{api}}/100?keyType=OK
