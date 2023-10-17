@@ -55,6 +55,50 @@ export const getProdServAll = async () => {
   }
 };
 
+// GET ONE eCOMMERCE
+export const getProdServOne = async () => {
+  let bitacora = BITACORA();
+  let data = DATA();
+
+  try {
+    bitacora.process = "Extraer uno de los productos y/o servicios";
+    data.method = "GET";
+    data.api = "/prodserv";
+    data.process =
+      "Extraer uno de los productos o servicios de la coleccion de cat_prod_serv";
+
+    const ProdServOne = await prodServs.find().then((prodServ) => {
+      if (!prodServ) {
+        data.status = 404;
+        data.messageDEV = "La base de datos no tiene productos y/o servicios";
+        throw Error(data.messageDEV);
+      }
+
+      return prodServ;
+    });
+
+    //data.status = 200;
+    data.messageUSR =
+      "La extraccion del productos y/o servicios fue exitosa";
+    data.dataRes = ProdServOne;
+    bitacora = AddMSG(bitacora, data, "OK", 200, true);
+    return OK(bitacora);
+  } catch (error) {
+    if (!data.status) data.status = error.statusCode;
+    let { message } = error;
+    if (!data.messageDEV) data.messageDEV = message;
+    if (data.dataRes.length === 0) data.dataRes = error;
+
+    data.messageUSR =
+      "La extracion del productos y/o servicios no fue exitosa";
+    bitacora = AddMSG(bitacora, data, "FAIL");
+
+    return FAIL(bitacora);
+  } finally {
+    //Haya o no haya error se ejecuta el finally
+  }
+};
+
 /////////////////////////////////////////////////////
 // *********** POST SECTION eCOMMERCE *********** //
 /////////////////////////////////////////////////////
