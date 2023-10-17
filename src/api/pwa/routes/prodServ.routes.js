@@ -7,6 +7,7 @@ const router = Router();
 
 // GET
 router.get("/", prodServController.getProdServAll);
+router.get("/:id", prodServController.getProdServOne);
 
 // POST
 router.post("/", prodServController.addProdServ);
