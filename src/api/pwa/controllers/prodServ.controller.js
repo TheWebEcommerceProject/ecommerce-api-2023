@@ -16,6 +16,18 @@ export const getProdServAll = async (req, res, next) => {
   }
 };
 
+// GET ONE eCOMMERCE
+export const getProdServOne = async (req, res, next) => {
+  try {
+    const ProdServOne = await prodServServices.getProdServOne();
+    if (ProdServOne) {
+      return res.status(ProdServOne.status).json(ProdServOne);
+    }
+  } catch (error) {
+    next(error);
+  }
+};
+
 /////////////////////////////////////////////////////
 // *********** POST SECTION eCOMMERCE *********** //
 /////////////////////////////////////////////////////
