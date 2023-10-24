@@ -56,7 +56,7 @@ export const getProdServAll = async () => {
 };
 
 // GET ONE eCOMMERCE
-export const getProdServOne = async (idProdServ) => {
+export const getProdServOne = async (idProdServ, keyType) => {
   let bitacora = BITACORA();
   let data = DATA();
 
@@ -67,7 +67,17 @@ export const getProdServOne = async (idProdServ) => {
     data.process =
       "Extraer uno de los productos o servicios de la coleccion de cat_prod_serv";
 
-    const ProdServOne = await prodServs.findOne({ IdProdServOK: idProdServ }).then((prodServ) => {
+    let query = {};
+
+    if (keyType === "OK") {
+      query = { IdProdServOK: idProdServ };
+    } else if (keyType === "BK") {
+      query = { IdProdServBK: idProdServ };
+    } else {
+      throw new Error("Tipo de clave no válido");
+    }
+
+    const ProdServOne = await prodServs.findOne(query).then((prodServ) => {
       if (!prodServ) {
         data.status = 404;
         data.messageDEV = "La base de datos no tiene productos y/o servicios";
@@ -76,6 +86,7 @@ export const getProdServOne = async (idProdServ) => {
 
       return prodServ;
     });
+
 
     //data.status = 200;
     data.messageUSR =

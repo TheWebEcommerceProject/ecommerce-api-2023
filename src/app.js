@@ -5,6 +5,7 @@ import cors from "cors";
 
 // imports Routes
 import routeAPIPWA from "./api/pwa/routes/index";
+import routeAPIV1 from './api/v1/routes/index';
 
 // imports Middlewares
 // Config para variables de entorno
@@ -41,6 +42,7 @@ app.get("/DrFIC", (req, res) => {
 });
 
 // Routes
+routeAPIV1(app);
 routeAPIPWA(app);
 
 // Swagger Docs

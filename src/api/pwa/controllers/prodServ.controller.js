@@ -21,8 +21,10 @@ export const getProdServOne = async (req, res, next) => {
   try {
 
     const { id } = req.params;
+    const keyType = req.query.keyType || 'OK';
 
-    const ProdServOne = await prodServServices.getProdServOne(id);
+    const ProdServOne = await prodServServices.getProdServOne(id, keyType);
+
     if (ProdServOne) {
       return res.status(ProdServOne.status).json(ProdServOne);
     }
