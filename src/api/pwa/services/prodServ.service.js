@@ -167,7 +167,7 @@ export const addProdServ = async (newProdServ) => {
 /////////////////////////////////////////////////////
 
 // UPDATE eCOMMERCE
-export const putProdServ = async (idProdServ, newProdServ) => {
+export const putProdServ = async (idProdServ, newProdServ, keyType) => {
   let bitacora = BITACORA();
   let data = DATA();
 
@@ -177,8 +177,19 @@ export const putProdServ = async (idProdServ, newProdServ) => {
     data.api = "/prodserv";
     data.process = "Modificar un producto y/o servicio de la coleccion de cat_prod_Serv";
 
+    let query = {};
+
+    if (keyType === "OK") {
+      query = { IdProdServOK: idProdServ };
+    } else if (keyType === "BK") {
+      query = { IdProdServBK: idProdServ };
+    } else {
+      throw new Error("Tipo de clave no válido");
+    }
+
+
     const ProdServUpdated = await prodServs
-      .findOneAndUpdate({ IdProdServOK: idProdServ }, newProdServ)
+      .findOneAndUpdate(query, newProdServ)
       .then((institute) => {
         if (!institute) {
           data.status = 400;
@@ -218,7 +229,7 @@ export const putProdServ = async (idProdServ, newProdServ) => {
 /////////////////////////////////////////////////////
 
 // DELETE ONE eCOMMERCE
-export const deleteProdServ = async (idProdServ) => {
+export const deleteProdServ = async (idProdServ, keyType) => {
   let bitacora = BITACORA();
   let data = DATA();
 
@@ -228,10 +239,18 @@ export const deleteProdServ = async (idProdServ) => {
     data.api = "/prodserv";
     data.process = "Eliminar un producto y/o servicio de la coleccion de cat_institutos";
 
-    const { id } = idProdServ;
+    let query = {};
+
+    if (keyType === "OK") {
+      query = { IdProdServOK: idProdServ };
+    } else if (keyType === "BK") {
+      query = { IdProdServBK: idProdServ };
+    } else {
+      throw new Error("Tipo de clave no válido");
+    }
 
     const ProdServDeleted = await prodServs
-      .findOneAndDelete({ IdProdServOK: id })
+      .findOneAndDelete(query)
       .then((prodServ) => {
         if (!prodServ) {
           data.status = 400;

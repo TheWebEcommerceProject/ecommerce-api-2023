@@ -56,9 +56,11 @@ export const addProdServ = async (req, res, next) => {
 // UPDATE eCOMMERCE
 export const putProdServ = async (req, res, next) => {
   try {
-    const { id } = req.params;
 
-    const ProdServUpdated = await prodServServices.putProdServ(id, req.body);
+    const { id } = req.params;
+    const keyType = req.query.keyType || 'OK';
+
+    const ProdServUpdated = await prodServServices.putProdServ(id, req.body, keyType);
     if (ProdServUpdated) {
       return res.status(ProdServUpdated.status).json(ProdServUpdated);
     }
@@ -74,7 +76,11 @@ export const putProdServ = async (req, res, next) => {
 // DELETE eCOMMERCE
 export const deleteProdServ = async (req, res, next) => {
   try {
-    const ProdServDeleted = await prodServServices.deleteProdServ(req.params);
+
+    const { id } = req.params;
+    const keyType = req.query.keyType || 'OK';
+
+    const ProdServDeleted = await prodServServices.deleteProdServ(id, keyType);
     if (ProdServDeleted) {
       return res.status(ProdServDeleted.status).json(ProdServDeleted);
     }
