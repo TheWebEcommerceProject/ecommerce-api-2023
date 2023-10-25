@@ -4,68 +4,146 @@ import obtenerConexion from "../../../config/connectionsFactory";
 import obtenerModelo from "../../../config/modelsFactory";
 
 const prodServSchemaPWA = new mongoose.Schema({
-  IdProdServPK: { type: Number, required: true },
-  IdProdServOK: { type: String },
-  IdProdServBK: { type: String },
-  //--
-  IdProdServMaOK: { type: String },
-  IdProdServMaBK: { type: String },
-  //--
-  DesProdServ: { type: String },
-  IdMedidaOK: { type: String },
-  IdMedidaBK: { type: String },
-  //FIC: ESTATUS
-  cat_prod_serv_estatus: [
-    {
-      IdTipoGenEstatusOk: { type: String },
-      IdGenEstatusOk: { type: String },
-      TipoEstatus: { type: String },
-      Actual: { type: String },
-      Observacion: { type: String },
-      detail_row: {
-        FechaReg: { type: Date, default: Date.now },
-        UsuarioReg: { type: String },
-      },
-      _id: false,
+    IdInstitutoOK: {type: String, required: true},
+    IdProdServOK: {type: String},
+    IdProdServBK: {type: String},
+    CodigoBarras: {type: String},
+    DesProdServ: {type: String},
+    Indice: {type: String},
+    cat_prod_serv_estatus: [
+        {
+            _id: false,
+            IdEstatusOK: {type: String},
+            Estatus: {type: String},
+            Actual: {type: String},
+            Observacion: {type: String},
+            detail_row: {
+                Activo: {type: String},
+                Borrado: {type: String},
+                detail_row_reg: [
+                    {
+                        FechaReg: {
+                            $date: {type: Date, default: Date.now}
+                        },
+                        UsuarioReg: {type: String},
+                    },
+                ],
+            },
+        },
+    ],
+    cat_prod_serv_info_ad: [
+        {
+            _id: false,
+            IdEtiquetaOK: {type: String},
+            Valor: {type: String},
+            detail_row: {
+                Activo: {type: String},
+                Borrado: {type: String},
+                detail_row_reg: [
+                    {
+                        FechaReg: {
+                            $date: {type: Date, default: Date.now}
+                        },
+                        UsuarioReg: {type: String},
+                    },
+                ],
+            },
+        },
+    ],
+    cat_prod_serv_presenta: [
+        {
+            _id: false,
+            IdPresentaOK: {type: String},
+            IdPresentaBK: {type: String},
+            DesPresenta: {type: String},
+            cat_prod_serv_info_vta: [
+                {
+                    _id: false,
+                    IdEtiquetaOK: {type: String},
+                    Valor: {type: String},
+                    detail_row: {
+                        Activo: {type: String},
+                        Borrado: {type: String},
+                        detail_row_reg: [
+                            {
+                                FechaReg: {
+                                    $date: {type: Date, default: Date.now}
+                                },
+                                UsuarioReg: {type: String},
+                            },
+                        ],
+                    },
+                },
+            ],
+            cat_prod_serv_info_ad: [
+                {
+                    _id: false,
+                    IdEtiquetaOK: {type: String},
+                    Valor: {type: String},
+                    detail_row: {
+                        Activo: {type: String},
+                        Borrado: {type: String},
+                        detail_row_reg: [
+                            {
+                                FechaReg: {
+                                    $date: {type: Date, default: Date.now}
+                                },
+                                UsuarioReg: {type: String},
+                            },
+                        ],
+                    },
+                },
+            ],
+            cat_prod_serv_archivos: [
+                {
+                    _id: false,
+                    IdArchivoOK: {type: String},
+                    IdArchivoBK: {type: String},
+                    DesArchivo: {type: String},
+                    RutaArchivo: {type: String},
+                    IdTipoArchivoOK: {type: String},
+                    Archivo: {type: String},
+                    IdSeccionOK: {type: String},
+                    Seccion: {type: String},
+                    Secuencia: {type: Number},
+                    Principal: {type: String},
+                    VerSiempre: {type: String},
+                    detail_row: {
+                        Activo: {type: String},
+                        Borrado: {type: String},
+                        detail_row_reg: [
+                            {
+                                FechaReg: {
+                                    $date: {type: Date, default: Date.now}
+                                },
+                                UsuarioReg: {type: String},
+                            },
+                        ],
+                    },
+                },
+            ],
+        },
+    ],
+    cat_prod_serv_negocios: [
+        {
+            _id: false,
+            IdNegocioOK: {type: String},
+        },
+    ],
+    detail_row: {
+        Activo: {type: String},
+        Borrado: {type: String},
+        detail_row_reg: [
+            {
+                FechaReg: {
+                    $date: {type: Date, default: Date.now}
+                },
+                UsuarioReg: {type: String},
+            },
+        ],
     },
-  ],
-  //FIC: ARCHIVOS
-  cat_prod_serv_archivos: [
-    {
-      DesArchivo: { type: String },
-      RutaArchivo: { type: String },
-      //FIC: Tipo Archivo
-      IdTipoGenArchivoOK: { type: String },
-      IdGenArchivoOK: { type: String },
-      TipoArchivo: { type: String },
-      //FIC: Sección
-      IdTipoGenSeccionOK: { type: String },
-      IdGenSeccionOK: { type: String },
-      TipoSeccion: { type: String },
-      //---
-      Secuencia: { type: Number },
-      Principal: { type: String },
-      detail_row: {
-        FechaReg: { type: Date, default: Date.now },
-        UsuarioReg: { type: String },
-        FechaUltMod: { type: Date, default: Date.now },
-        UsuarioMod: { type: String },
-        Activo: { type: String, default: "S" },
-        Borrado: { type: String, default: "N" },
-        _id: false,
-      },
-      _id: false,
-    },
-  ],
-  detail_row: {
-    FechaReg: { type: Date, default: Date.now },
-    UsuarioReg: { type: String },
-    FechaUltMod: { type: Date, default: Date.now },
-    UsuarioMod: { type: String },
-    Activo: { type: String, default: "S" },
-    Borrado: { type: String, default: "N" },
-  },
-});
+}, {versionKey: false});
+
 
 // *******************************************************************
 const dbName = config.DATABASE;
@@ -74,11 +152,11 @@ const dbCluster = config.CLUSTER;
 const conn = obtenerConexion(dbName, dbCluster);
 
 const model = obtenerModelo(
-  "cat_prod_serv",
-  prodServSchemaPWA,
-  conn,
-  dbName,
-  dbCluster
+    "cat_prod_serv",
+    prodServSchemaPWA,
+    conn,
+    dbName,
+    dbCluster
 );
 
 export default model;

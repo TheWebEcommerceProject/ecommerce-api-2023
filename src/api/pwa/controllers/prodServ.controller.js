@@ -6,31 +6,31 @@ import * as prodServServices from "../services/prodServ.service";
 
 // GET ALL eCOMMERCE
 export const getProdServAll = async (req, res, next) => {
-  try {
-    const ProdServAll = await prodServServices.getProdServAll();
-    if (ProdServAll) {
-      return res.status(ProdServAll.status).json(ProdServAll);
+    try {
+        const ProdServAll = await prodServServices.getProdServAll();
+        if (ProdServAll) {
+            return res.status(ProdServAll.status).json(ProdServAll);
+        }
+    } catch (error) {
+        next(error);
     }
-  } catch (error) {
-    next(error);
-  }
 };
 
 // GET ONE eCOMMERCE
 export const getProdServOne = async (req, res, next) => {
-  try {
+    try {
 
-    const { id } = req.params;
-    const keyType = req.query.keyType || 'OK';
+        const {id} = req.params;
+        const keyType = req.query.keyType || 'IdInstitutoOK';
 
-    const ProdServOne = await prodServServices.getProdServOne(id, keyType);
+        const ProdServOne = await prodServServices.getProdServOne(id, keyType);
 
-    if (ProdServOne) {
-      return res.status(ProdServOne.status).json(ProdServOne);
+        if (ProdServOne) {
+            return res.status(ProdServOne.status).json(ProdServOne);
+        }
+    } catch (error) {
+        next(error);
     }
-  } catch (error) {
-    next(error);
-  }
 };
 
 /////////////////////////////////////////////////////
@@ -39,14 +39,14 @@ export const getProdServOne = async (req, res, next) => {
 
 // ADD eCOMMERCE
 export const addProdServ = async (req, res, next) => {
-  try {
-    const ProdServAdded = await prodServServices.addProdServ(req.body);
-    if (ProdServAdded) {
-      return res.status(ProdServAdded.status).json(ProdServAdded);
+    try {
+        const ProdServAdded = await prodServServices.addProdServ(req.body);
+        if (ProdServAdded) {
+            return res.status(ProdServAdded.status).json(ProdServAdded);
+        }
+    } catch (error) {
+        next(error);
     }
-  } catch (error) {
-    next(error);
-  }
 };
 
 /////////////////////////////////////////////////////
@@ -55,18 +55,18 @@ export const addProdServ = async (req, res, next) => {
 
 // UPDATE eCOMMERCE
 export const putProdServ = async (req, res, next) => {
-  try {
+    try {
 
-    const { id } = req.params;
-    const keyType = req.query.keyType || 'OK';
+        const {id} = req.params;
+        const keyType = req.query.keyType || 'IdInstitutoOK';
 
-    const ProdServUpdated = await prodServServices.putProdServ(id, req.body, keyType);
-    if (ProdServUpdated) {
-      return res.status(ProdServUpdated.status).json(ProdServUpdated);
+        const ProdServUpdated = await prodServServices.putProdServ(id, req.body, keyType);
+        if (ProdServUpdated) {
+            return res.status(ProdServUpdated.status).json(ProdServUpdated);
+        }
+    } catch (error) {
+        next(error);
     }
-  } catch (error) {
-    next(error);
-  }
 };
 
 /////////////////////////////////////////////////////
@@ -75,16 +75,16 @@ export const putProdServ = async (req, res, next) => {
 
 // DELETE eCOMMERCE
 export const deleteProdServ = async (req, res, next) => {
-  try {
+    try {
 
-    const { id } = req.params;
-    const keyType = req.query.keyType || 'OK';
+        const {id} = req.params;
+        const keyType = req.query.keyType || 'IdInstitutoOK';
 
-    const ProdServDeleted = await prodServServices.deleteProdServ(id, keyType);
-    if (ProdServDeleted) {
-      return res.status(ProdServDeleted.status).json(ProdServDeleted);
+        const ProdServDeleted = await prodServServices.deleteProdServ(id, keyType);
+        if (ProdServDeleted) {
+            return res.status(ProdServDeleted.status).json(ProdServDeleted);
+        }
+    } catch (error) {
+        next(error);
     }
-  } catch (error) {
-    next(error);
-  }
 };

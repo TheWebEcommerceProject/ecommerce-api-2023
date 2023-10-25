@@ -13,290 +13,1258 @@ DELETE {{api}}/100?keyType=OK
 POST {{api}}
 Content-Type: application/json
 
-{ 
-    "IdProdServPK" : 100, 
-    "IdProdServOK" : "100", 
-    "IdProdServBK" : "ENSA100", 
-    "IdProdServMaOK" : "1", 
-    "IdProdServMaBK" : "1", 
-    "DesProdServ" : "ENFRIADOR VERTICAL G326 2PTAS CO2", 
-    "IdUMedidaOK" : "1", 
-    "IdUMedidaBK" : "1", 
-    "cat_prod_serv_estatus" : [
-        {
-            "IdTipoGenEstatusOK" : "4", 
-            "IdGenEstatusOK" : "23", 
-            "TipoEstatus" : "VIGENTE", 
-            "Actual" : "S", 
-            "Observacion" : "Ninguna", 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC"
-            }
-        }
-    ], 
-    "cat_prod_serv_paquetes" : [
-        {
-            "IdProdServOK" : "1", 
-            "IdProdServBK" : "1", 
-            "DesProdServ" : "ENFRIADOR VERTICAL G326 2PTAS CO2", 
-            "Cantidad" : 1.0, 
-            "IdUMedidaOK" : "1", 
-            "IdUMedidaBK" : "1", 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC", 
-                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioMod" : "FIBARRAC", 
-                "Activo" : "S", 
-                "Borrado" : "N"
-            }
-        }
-    ], 
-    "cat_prod_serv_archivos" : [
-        {
-            "DesArchivo" : "Foto del producto", 
-            "RutaArchivo" : "https://images.pexels.com/photos/3230214/pexels-photo-3230214.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260", 
-            "IdTipoGenArchivoOK" : "7", 
-            "IdGenArchivoOK" : "19", 
-            "TipoArchivo" : "IMAGEN", 
-            "IdTipoGenSeccionOK" : "", 
-            "IdGenSeccionOK" : "", 
-            "TipoSeccion" : "", 
-            "Secuencia" : 1, 
-            "Principal" : "S", 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC", 
-                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioMod" : "FIBARRAC", 
-                "Activo" : "S", 
-                "Borrado" : "N"
-            }
-        }
-    ], 
-    "cat_prod_serv_info_adicional" : [
-        {
-            "IdEtiqueta" : "IDMODELO", 
-            "Etiqueta" : "MODELO", 
-            "Valor" : "G326 2 PTAS CO2", 
-            "IdTipoGenSeccionOK" : "10", 
-            "IdGenSeccionOK" : "33", 
-            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
-            "Secuencia" : 10, 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC", 
-                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioMod" : "FIBARRAC", 
-                "Activo" : "S", 
-                "Borrado" : "N"
-            }
-        }, 
-        {
-            "IdEtiqueta" : "IDMARCA", 
-            "Etiqueta" : "MARCA", 
-            "Valor" : "IMBERA", 
-            "IdTipoGenSeccionOK" : "10", 
-            "IdGenSeccionOK" : "33", 
-            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
-            "Secuencia" : 20, 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC", 
-                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioMod" : "FIBARRAC", 
-                "Activo" : "S", 
-                "Borrado" : "N"
-            }
-        }, 
-        {
-            "IdEtiqueta" : "IDDIMENCIONMM", 
-            "Etiqueta" : "DIMENCIÓN EN MM", 
-            "Valor" : "1985/1000/658", 
-            "IdTipoGenSeccionOK" : "10", 
-            "IdGenSeccionOK" : "33", 
-            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
-            "Secuencia" : 30, 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC", 
-                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioMod" : "FIBARRAC", 
-                "Activo" : "S", 
-                "Borrado" : "N"
-            }
-        }, 
-        {
-            "IdEtiqueta" : "IDPESOKG", 
-            "Etiqueta" : "PESO EN KG", 
-            "Valor" : "152.500", 
-            "IdTipoGenSeccionOK" : "10", 
-            "IdGenSeccionOK" : "33", 
-            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
-            "Secuencia" : 40, 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC", 
-                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioMod" : "FIBARRAC", 
-                "Activo" : "S", 
-                "Borrado" : "N"
-            }
-        }
-    ], 
-    "detail_row" : {
-        "FechaReg" : "2022-01-05T10:20:33+07:00", 
-        "UsuarioReg" : "FIBARRAC", 
-        "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-        "UsuarioMod" : "FIBARRAC", 
-        "Activo" : "S", 
-        "Borrado" : "N"
+{
+  "IdInstitutoOK": "9001",
+  "IdProdServOK": "9001-34",
+  "IdProdServBK": "34",
+  "CodigoBarras": "5544332211",
+  "DesProdServ": "Bose Sport Earbuds Audífonos Inalámbricos, Baltic Blue",
+  "cat_prod_serv_estatus": [
+    {
+      "IdEstatusOK": "61-2",
+      "Estatus": "No Activo",
+      "Actual": "N",
+      "Observacion": "Ninguna",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-04T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEstatusOK": "61-1",
+      "Estatus": "Activo",
+      "Actual": "N",
+      "Observacion": "Ninguna",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-04T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEstatusOK": "61-3",
+      "Estatus": "Baja",
+      "Actual": "S",
+      "Observacion": "Ninguna",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-04T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
     }
+  ],
+  "cat_prod_serv_info_ad": [
+    {
+      "IdEtiquetaOK": "IDMODELO",
+      "Valor": "774373-0020",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-04T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEtiquetaOK": "IDMARCA",
+      "Valor": "Bose",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-04T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEtiquetaOK": "IDCATEGO-IDTECNO",
+      "Valor": "Tecnologia",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-30T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEtiquetaOK": "IDSUBCATEGO-IDAUDIO",
+      "Valor": "Audio",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-30T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEtiquetaOK": "IDRATING-IDDESTA",
+      "Valor": "Destacado",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-30T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEtiquetaOK": "IDREMARK-IDNEW",
+      "Valor": "NEW",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-30T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    }
+  ],
+  "cat_prod_serv_presenta": [
+    {
+      "IdPresentaOK": "9001-34-1",
+      "IdPresentaBK": "341",
+      "DesPresenta": "Color Baltic Blue",
+      "cat_prod_serv_info_vta": [
+        {
+          "IdEtiquetaOK": "IDCOLOR1",
+          "Valor": "Baltic Blue",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ],
+      "cat_prod_serv_info_ad": [
+        {
+          "IdEtiquetaOK": "IDRATING-IDDESTACA",
+          "Valor": "Destacado",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ],
+      "cat_prod_serv_archivos": [
+        {
+          "IdArchivoOK": "9001-34-1-1",
+          "IdArchivoBK": "BALTIC_BLUE_IMG_01",
+          "DesArchivo": "Foto Principal",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/71NPDp+gqGL._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 10,
+          "Principal": "S",
+          "VerSiempre": "S",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-1-2",
+          "IdArchivoBK": "BALTIC-BLUE-IMG-02",
+          "DesArchivo": "Foto de Frente y Perfil",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/618d7YpgeBL._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 20,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-1-3",
+          "IdArchivoBK": "BALTIC-BLUE-IMG-03",
+          "DesArchivo": "Foto con Accesorios",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/71MNIOblqDL._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 30,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-1-4",
+          "IdArchivoBK": "BALTIC-BLUE-IMG-04",
+          "DesArchivo": "Foto de Modelo de Uso",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/71MNIOblqDL._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 40,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "IdPresentaOK": "9001-34-2",
+      "IdPresentaBK": "GLACIER-WHITE",
+      "DesPresenta": "Color Glacier White",
+      "cat_prod_serv_info_vta": [
+        {
+          "IdEtiquetaOK": "IDCOLOR1",
+          "Valor": "Glacier White",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ],
+      "cat_prod_serv_info_ad": [
+        {
+          "IdEtiquetaOK": "IDRATING-IDMODERA",
+          "Valor": "Moderado",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ],
+      "cat_prod_serv_archivos": [
+        {
+          "IdArchivoOK": "9001-34-2-1",
+          "IdArchivoBK": "GLACIER-WHITE-IMG-01",
+          "DesArchivo": "Foto Principal",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/61wWiDKxI6L._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 10,
+          "Principal": "S",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-2-2",
+          "IdArchivoBK": "GLACIER-WHITE-IMG-02",
+          "DesArchivo": "Foto de Frente y Perfil",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/51WPD-oetHL._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 20,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-2-3",
+          "IdArchivoBK": "GLACIER-WHITE-IMG-03",
+          "DesArchivo": "Foto con Accesorios",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/61uCOhtL1WL._AC_SY879_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 30,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-2-4",
+          "IdArchivoBK": "GLACIER-WHITE-IMG-04",
+          "DesArchivo": "Foto de Modelo de Uso",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/81i32zfZEIS._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 40,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "IdPresentaOK": "9001-34-3",
+      "IdPresentaBK": "343",
+      "DesPresenta": "Color Triple Black",
+      "cat_prod_serv_info_vta": [
+        {
+          "IdEtiquetaOK": "IDCOLOR1",
+          "Valor": "Triple Black",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ],
+      "cat_prod_serv_info_ad": [
+        {
+          "IdEtiquetaOK": "IDRATING-IDMINIMO",
+          "Valor": "Minimo",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ],
+      "cat_prod_serv_archivos": [
+        {
+          "IdArchivoOK": "9001-34-3-1",
+          "IdArchivoBK": "TRIPLE-BLACK-IMG-01",
+          "DesArchivo": "Foto Principal",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/61-o49Cwx2L._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 10,
+          "Principal": "S",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-3-2",
+          "IdArchivoBK": "TRIPLE-BLACK-IMG-02",
+          "DesArchivo": "Foto de Frente y Perfil",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/519Dfq0ir6L._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 20,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-3-3",
+          "IdArchivoBK": "TRIPLE-BLACK-IMG-03",
+          "DesArchivo": "Foto con Accesorios",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/61bzRycSHjL._AC_SY879_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 30,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-3-4",
+          "IdArchivoBK": "TRIPLE-BLACK-IMG-04",
+          "DesArchivo": "Foto de Modelo de Uso",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/71QEPzHJpOL._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 40,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-3-5",
+          "IdArchivoBK": "TRIPLE-BLACK-VID-01",
+          "DesArchivo": "Video de Presentación",
+          "RutaArchivo": "https://www.amazon.com.mx/vdp/878acab520c8410d97586e9b442c564a?ref=dp_vse_ibvc0",
+          "IdTipoArchivoOK": "21-2",
+          "Archivo": "Video",
+          "IdSeccionOK": "21-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 50,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "cat_prod_serv_negocios": [
+    {
+      "IdNegocioOK": "9001-1101"
+    },
+    {
+      "IdNegocioOK": "9001-1202"
+    }
+  ],
+  "detail_row": {
+    "Activo": "S",
+    "Borrado": "N",
+    "detail_row_reg": [
+      {
+        "FechaReg": {
+          "$date": "2022-04-30T00:00:00.628Z"
+        },
+        "UsuarioReg": "FIBARRAC"
+      }
+    ]
+  }
 }
 
 ### PUT ITEM PRODUCTO Y/O SERVICIO
 PUT {{api}}/100?keyType=OK
 Content-Type: application/json
 
-{ 
-    "IdProdServPK" : 100, 
-    "IdProdServOK" : "100", 
-    "IdProdServBK" : "ENSA100", 
-    "IdProdServMaOK" : "1", 
-    "IdProdServMaBK" : "1", 
-    "DesProdServ" : "ENFRIADOR HORIZONTAL G326 2PTAS CO2", 
-    "IdUMedidaOK" : "1", 
-    "IdUMedidaBK" : "1", 
-    "cat_prod_serv_estatus" : [
-        {
-            "IdTipoGenEstatusOK" : "4", 
-            "IdGenEstatusOK" : "23", 
-            "TipoEstatus" : "VIGENTE", 
-            "Actual" : "S", 
-            "Observacion" : "Ninguna", 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC"
-            }
-        }
-    ], 
-    "cat_prod_serv_paquetes" : [
-        {
-            "IdProdServOK" : "1", 
-            "IdProdServBK" : "1", 
-            "DesProdServ" : "ENFRIADOR VERTICAL G326 2PTAS CO2", 
-            "Cantidad" : 1.0, 
-            "IdUMedidaOK" : "1", 
-            "IdUMedidaBK" : "1", 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC", 
-                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioMod" : "FIBARRAC", 
-                "Activo" : "S", 
-                "Borrado" : "N"
-            }
-        }
-    ], 
-    "cat_prod_serv_archivos" : [
-        {
-            "DesArchivo" : "Foto del producto", 
-            "RutaArchivo" : "https://images.pexels.com/photos/3230214/pexels-photo-3230214.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260", 
-            "IdTipoGenArchivoOK" : "7", 
-            "IdGenArchivoOK" : "19", 
-            "TipoArchivo" : "IMAGEN", 
-            "IdTipoGenSeccionOK" : "", 
-            "IdGenSeccionOK" : "", 
-            "TipoSeccion" : "", 
-            "Secuencia" : 1, 
-            "Principal" : "S", 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC", 
-                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioMod" : "FIBARRAC", 
-                "Activo" : "S", 
-                "Borrado" : "N"
-            }
-        }
-    ], 
-    "cat_prod_serv_info_adicional" : [
-        {
-            "IdEtiqueta" : "IDMODELO", 
-            "Etiqueta" : "MODELO", 
-            "Valor" : "G326 2 PTAS CO2", 
-            "IdTipoGenSeccionOK" : "10", 
-            "IdGenSeccionOK" : "33", 
-            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
-            "Secuencia" : 10, 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC", 
-                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioMod" : "FIBARRAC", 
-                "Activo" : "S", 
-                "Borrado" : "N"
-            }
-        }, 
-        {
-            "IdEtiqueta" : "IDMARCA", 
-            "Etiqueta" : "MARCA", 
-            "Valor" : "IMBERA", 
-            "IdTipoGenSeccionOK" : "10", 
-            "IdGenSeccionOK" : "33", 
-            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
-            "Secuencia" : 20, 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC", 
-                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioMod" : "FIBARRAC", 
-                "Activo" : "S", 
-                "Borrado" : "N"
-            }
-        }, 
-        {
-            "IdEtiqueta" : "IDDIMENCIONMM", 
-            "Etiqueta" : "DIMENCIÓN EN MM", 
-            "Valor" : "1985/1000/658", 
-            "IdTipoGenSeccionOK" : "10", 
-            "IdGenSeccionOK" : "33", 
-            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
-            "Secuencia" : 30, 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC", 
-                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioMod" : "FIBARRAC", 
-                "Activo" : "S", 
-                "Borrado" : "N"
-            }
-        }, 
-        {
-            "IdEtiqueta" : "IDPESOKG", 
-            "Etiqueta" : "PESO EN KG", 
-            "Valor" : "152.500", 
-            "IdTipoGenSeccionOK" : "10", 
-            "IdGenSeccionOK" : "33", 
-            "TipoSeccion" : "SECCIÓN PRINCIPAL PRODUCTO SERVICIO", 
-            "Secuencia" : 40, 
-            "detail_row" : {
-                "FechaReg" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioReg" : "FIBARRAC", 
-                "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-                "UsuarioMod" : "FIBARRAC", 
-                "Activo" : "S", 
-                "Borrado" : "N"
-            }
-        }
-    ], 
-    "detail_row" : {
-        "FechaReg" : "2022-01-05T10:20:33+07:00", 
-        "UsuarioReg" : "FIBARRAC", 
-        "FechaUltMod" : "2022-01-05T10:20:33+07:00", 
-        "UsuarioMod" : "FIBARRAC", 
-        "Activo" : "S", 
-        "Borrado" : "N"
+{
+  "IdInstitutoOK": "9001",
+  "IdProdServOK": "9001-34",
+  "IdProdServBK": "34",
+  "CodigoBarras": "5544332211",
+  "DesProdServ": "Bose Sport Earbuds Audífonos Inalámbricos, Baltic Blue",
+  "cat_prod_serv_estatus": [
+    {
+      "IdEstatusOK": "61-2",
+      "Estatus": "No Activo",
+      "Actual": "N",
+      "Observacion": "Ninguna",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-04T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEstatusOK": "61-1",
+      "Estatus": "Activo",
+      "Actual": "N",
+      "Observacion": "Ninguna",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-04T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEstatusOK": "61-3",
+      "Estatus": "Baja",
+      "Actual": "S",
+      "Observacion": "Ninguna",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-04T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
     }
+  ],
+  "cat_prod_serv_info_ad": [
+    {
+      "IdEtiquetaOK": "IDMODELO",
+      "Valor": "774373-0020",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-04T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEtiquetaOK": "IDMARCA",
+      "Valor": "Bose",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-04T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEtiquetaOK": "IDCATEGO-IDTECNO",
+      "Valor": "Tecnologia",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-30T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEtiquetaOK": "IDSUBCATEGO-IDAUDIO",
+      "Valor": "Audio",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-30T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEtiquetaOK": "IDRATING-IDDESTA",
+      "Valor": "Destacado",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-30T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    },
+    {
+      "IdEtiquetaOK": "IDREMARK-IDNEW",
+      "Valor": "NEW",
+      "detail_row": {
+        "Activo": "S",
+        "Borrado": "N",
+        "detail_row_reg": [
+          {
+            "FechaReg": {
+              "$date": "2022-04-30T00:00:00.628Z"
+            },
+            "UsuarioReg": "FIBARRAC"
+          }
+        ]
+      }
+    }
+  ],
+  "cat_prod_serv_presenta": [
+    {
+      "IdPresentaOK": "9001-34-1",
+      "IdPresentaBK": "341",
+      "DesPresenta": "Color Baltic Blue",
+      "cat_prod_serv_info_vta": [
+        {
+          "IdEtiquetaOK": "IDCOLOR1",
+          "Valor": "Baltic Blue",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ],
+      "cat_prod_serv_info_ad": [
+        {
+          "IdEtiquetaOK": "IDRATING-IDDESTACA",
+          "Valor": "Destacado",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ],
+      "cat_prod_serv_archivos": [
+        {
+          "IdArchivoOK": "9001-34-1-1",
+          "IdArchivoBK": "BALTIC_BLUE_IMG_01",
+          "DesArchivo": "Foto Principal",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/71NPDp+gqGL._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 10,
+          "Principal": "S",
+          "VerSiempre": "S",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-1-2",
+          "IdArchivoBK": "BALTIC-BLUE-IMG-02",
+          "DesArchivo": "Foto de Frente y Perfil",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/618d7YpgeBL._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 20,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-1-3",
+          "IdArchivoBK": "BALTIC-BLUE-IMG-03",
+          "DesArchivo": "Foto con Accesorios",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/71MNIOblqDL._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 30,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-1-4",
+          "IdArchivoBK": "BALTIC-BLUE-IMG-04",
+          "DesArchivo": "Foto de Modelo de Uso",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/71MNIOblqDL._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 40,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "IdPresentaOK": "9001-34-2",
+      "IdPresentaBK": "GLACIER-WHITE",
+      "DesPresenta": "Color Glacier White",
+      "cat_prod_serv_info_vta": [
+        {
+          "IdEtiquetaOK": "IDCOLOR1",
+          "Valor": "Glacier White",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ],
+      "cat_prod_serv_info_ad": [
+        {
+          "IdEtiquetaOK": "IDRATING-IDMODERA",
+          "Valor": "Moderado",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ],
+      "cat_prod_serv_archivos": [
+        {
+          "IdArchivoOK": "9001-34-2-1",
+          "IdArchivoBK": "GLACIER-WHITE-IMG-01",
+          "DesArchivo": "Foto Principal",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/61wWiDKxI6L._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 10,
+          "Principal": "S",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-2-2",
+          "IdArchivoBK": "GLACIER-WHITE-IMG-02",
+          "DesArchivo": "Foto de Frente y Perfil",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/51WPD-oetHL._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 20,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-2-3",
+          "IdArchivoBK": "GLACIER-WHITE-IMG-03",
+          "DesArchivo": "Foto con Accesorios",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/61uCOhtL1WL._AC_SY879_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 30,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-2-4",
+          "IdArchivoBK": "GLACIER-WHITE-IMG-04",
+          "DesArchivo": "Foto de Modelo de Uso",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/81i32zfZEIS._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 40,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "IdPresentaOK": "9001-34-3",
+      "IdPresentaBK": "343",
+      "DesPresenta": "Color Triple Black",
+      "cat_prod_serv_info_vta": [
+        {
+          "IdEtiquetaOK": "IDCOLOR1",
+          "Valor": "Triple Black",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ],
+      "cat_prod_serv_info_ad": [
+        {
+          "IdEtiquetaOK": "IDRATING-IDMINIMO",
+          "Valor": "Minimo",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ],
+      "cat_prod_serv_archivos": [
+        {
+          "IdArchivoOK": "9001-34-3-1",
+          "IdArchivoBK": "TRIPLE-BLACK-IMG-01",
+          "DesArchivo": "Foto Principal",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/61-o49Cwx2L._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 10,
+          "Principal": "S",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-3-2",
+          "IdArchivoBK": "TRIPLE-BLACK-IMG-02",
+          "DesArchivo": "Foto de Frente y Perfil",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/519Dfq0ir6L._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 20,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-3-3",
+          "IdArchivoBK": "TRIPLE-BLACK-IMG-03",
+          "DesArchivo": "Foto con Accesorios",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/61bzRycSHjL._AC_SY879_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 30,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-3-4",
+          "IdArchivoBK": "TRIPLE-BLACK-IMG-04",
+          "DesArchivo": "Foto de Modelo de Uso",
+          "RutaArchivo": "https://m.media-amazon.com/images/I/71QEPzHJpOL._AC_SX679_.jpg",
+          "IdTipoArchivoOK": "21-1",
+          "Archivo": "Imagen",
+          "IdSeccionOK": "22-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 40,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        },
+        {
+          "IdArchivoOK": "9001-34-3-5",
+          "IdArchivoBK": "TRIPLE-BLACK-VID-01",
+          "DesArchivo": "Video de Presentación",
+          "RutaArchivo": "https://www.amazon.com.mx/vdp/878acab520c8410d97586e9b442c564a?ref=dp_vse_ibvc0",
+          "IdTipoArchivoOK": "21-2",
+          "Archivo": "Video",
+          "IdSeccionOK": "21-1",
+          "Seccion": "Carrusel Principal",
+          "Secuencia": 50,
+          "Principal": "N",
+          "detail_row": {
+            "Activo": "S",
+            "Borrado": "N",
+            "detail_row_reg": [
+              {
+                "FechaReg": {
+                  "$date": "2022-04-30T00:00:00.628Z"
+                },
+                "UsuarioReg": "FIBARRAC"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "cat_prod_serv_negocios": [
+    {
+      "IdNegocioOK": "9001-1101"
+    },
+    {
+      "IdNegocioOK": "9001-1202"
+    }
+  ],
+  "detail_row": {
+    "Activo": "S",
+    "Borrado": "N",
+    "detail_row_reg": [
+      {
+        "FechaReg": {
+          "$date": "2022-04-30T00:00:00.628Z"
+        },
+        "UsuarioReg": "FIBARRAC"
+      }
+    ]
+  }
 }

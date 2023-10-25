@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import {Router} from 'express';
 import config from '../../../config/config'
 //Esta parte de imports crece por cada nuevo router que agregues.
 import prodServRoutes from './prodServ.routes';

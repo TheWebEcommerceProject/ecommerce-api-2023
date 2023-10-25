@@ -1,4 +1,4 @@
-import { Router } from "express";
+import {Router} from "express";
 import * as prodServController from "../controllers/prodServ.controller";
 
 const router = Router();

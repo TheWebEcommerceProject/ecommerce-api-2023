@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="32872242-fa43-4d58-af0a-f2deed5e99b1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/request/ProdServ.http" beforeDir="false" afterPath="$PROJECT_DIR$/request/ProdServ.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/pwa/controllers/prodServ.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/pwa/controllers/prodServ.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/pwa/models/prodServ.models.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/pwa/models/prodServ.models.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/pwa/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/pwa/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/pwa/routes/prodServ.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/pwa/routes/prodServ.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/pwa/services/prodServ.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/pwa/services/prodServ.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/v1/controllers/prodserv.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/v1/controllers/prodserv.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/v1/models/ProdServ.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/v1/models/ProdServ.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/v1/services/prodServ.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/v1/services/prodServ.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,14 +27,18 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2X2pRZbyrKp7MtliM5PIRei7OsN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showScratchesAndConsoles" value="false" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
@@ -30,10 +46,34 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/cesar/Documents/GitHub/E_COMMERCE/ecommerce-api-2023/src/api/pwa/models/archivo.json",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -43,6 +83,13 @@
       <option name="presentableId" value="Default" />
       <updated>1697837024592</updated>
       <workItem from="1697837026222" duration="15000" />
+      <workItem from="1698107361775" duration="237000" />
+      <workItem from="1698107614147" duration="38000" />
+      <workItem from="1698107665135" duration="647000" />
+      <workItem from="1698108325762" duration="3817000" />
+      <workItem from="1698195356501" duration="73000" />
+      <workItem from="1698195440617" duration="3822000" />
+      <workItem from="1698262376787" duration="10041000" />
     </task>
     <servers />
   </component>
