@@ -236,7 +236,7 @@ export const deleteProdServ = async (idProdServ, keyType) => {
         bitacora.process = "Eliminar un producto y/o servicio";
         data.method = "DELETE";
         data.api = "/prodserv/:id";
-        data.process = "Eliminar un producto y/o servicio de la coleccion de cat_institutos";
+        data.process = "Eliminar un producto y/o servicio de la coleccion de cat_prod_serv";
 
         let query = {};
 
