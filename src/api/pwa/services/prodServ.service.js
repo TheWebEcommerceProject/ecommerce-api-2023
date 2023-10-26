@@ -191,7 +191,7 @@ export const updateProdServ = async (idProdServ, modifiedProdServ, keyType) => {
             .findOneAndUpdate(query, modifiedProdServ)
             .then((institute) => {
                 if (!institute) {
-                    data.status = 400;
+                    data.status = 404;
                     data.messageDEV =
                         "La modificacion del producto y/o servicio en la base de datos <<NO>> tuvo exito";
                     throw Error(data.messageDEV);
@@ -252,7 +252,7 @@ export const deleteProdServ = async (idProdServ, keyType) => {
             .findOneAndDelete(query)
             .then((prodServ) => {
                 if (!prodServ) {
-                    data.status = 400;
+                    data.status = 404;
                     data.messageDEV =
                         "La eliminacion del producto y/o servicio en la base de datos <<NO>> tuvo exito";
                     throw Error(data.messageDEV);

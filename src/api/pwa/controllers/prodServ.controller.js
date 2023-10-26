@@ -54,7 +54,7 @@ export const addProdServ = async (req, res, next) => {
 /////////////////////////////////////////////////////
 
 // UPDATE eCOMMERCE
-export const putProdServ = async (req, res, next) => {
+export const updateProdServ = async (req, res, next) => {
     try {
 
         const {id} = req.params;

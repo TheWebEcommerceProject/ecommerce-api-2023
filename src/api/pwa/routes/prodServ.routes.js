@@ -13,7 +13,7 @@ router.get("/:id", prodServController.getProdServOne);
 router.post("/", prodServController.addProdServ);
 
 // PUT
-router.put("/:id", prodServController.putProdServ);
+router.put("/:id", prodServController.updateProdServ);
 
 // DELETE
 router.delete("/:id", prodServController.deleteProdServ);
