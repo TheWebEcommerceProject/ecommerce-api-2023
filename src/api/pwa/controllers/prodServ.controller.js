@@ -60,7 +60,7 @@ export const putProdServ = async (req, res, next) => {
         const {id} = req.params;
         const keyType = req.query.keyType || 'IdInstitutoOK';
 
-        const ProdServUpdated = await prodServServices.putProdServ(id, req.body, keyType);
+        const ProdServUpdated = await prodServServices.updateProdServ(id, req.body, keyType);
         if (ProdServUpdated) {
             return res.status(ProdServUpdated.status).json(ProdServUpdated);
         }

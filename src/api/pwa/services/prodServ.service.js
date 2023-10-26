@@ -167,7 +167,7 @@ export const addProdServ = async (newProdServ) => {
 /////////////////////////////////////////////////////
 
 // UPDATE eCOMMERCE
-export const putProdServ = async (idProdServ, newProdServ, keyType) => {
+export const updateProdServ = async (idProdServ, modifiedProdServ, keyType) => {
     let bitacora = BITACORA();
     let data = DATA();
 
@@ -188,7 +188,7 @@ export const putProdServ = async (idProdServ, newProdServ, keyType) => {
         }
 
         const ProdServUpdated = await prodServs
-            .findOneAndUpdate(query, newProdServ)
+            .findOneAndUpdate(query, modifiedProdServ)
             .then((institute) => {
                 if (!institute) {
                     data.status = 400;
