@@ -1,4 +1,4 @@
-import prodServs from "../models/prodServ.models";
+import prodServs from "../models/productos";
 import {
     OK,
     FAIL,
@@ -11,7 +11,7 @@ import {
 // *********** GET SECTION eCOMMERCE *********** //
 ////////////////////////////////////////////////////
 
-// GET ALL eCOMMERCE
+// GET ALL ProdServs
 export const getProdServAll = async () => {
     let bitacora = BITACORA();
     let data = DATA();
@@ -55,27 +55,22 @@ export const getProdServAll = async () => {
     }
 };
 
-// GET ONE eCOMMERCE
-export const getProdServOne = async (idProdServ, keyType) => {
+// GET ONE ProdServ
+export const getProdServOne = async (params) => {
     let bitacora = BITACORA();
     let data = DATA();
 
     try {
         bitacora.process = "Extraer uno de los productos y/o servicios";
         data.method = "GET";
-        data.api = "/prodserv/:id";
+        data.api = "/prodserv/one";
         data.process =
             "Extraer uno de los productos o servicios de la coleccion de cat_prod_serv";
 
-        let query = {};
-
-        if (keyType === "IdInstitutoOK") {
-            query = {IdInstitutoOK: idProdServ};
-        } else if (keyType === "IdProdServOK") {
-            query = {IdProdServOK: idProdServ};
-        } else {
-            throw new Error(data.messageDEV);
-        }
+        let query = {
+            IdInstitutoOK: params.IdInstitutoOK,
+            IdProdServOK: params.IdProdServOK,
+        };
 
         const ProdServOne = await prodServs.findOne(query).then((prodServ) => {
             if (!prodServ) {
@@ -114,7 +109,7 @@ export const getProdServOne = async (idProdServ, keyType) => {
 // *********** POST SECTION eCOMMERCE *********** //
 /////////////////////////////////////////////////////
 
-// ADD NEW eCOMMERCE
+// ADD NEW ProdServ
 export const addProdServ = async (newProdServ) => {
     let bitacora = BITACORA();
     let data = DATA();
@@ -166,29 +161,24 @@ export const addProdServ = async (newProdServ) => {
 // *********** PUT SECTION eCOMMERCE *********** //
 /////////////////////////////////////////////////////
 
-// UPDATE eCOMMERCE
-export const updateProdServ = async (idProdServ, modifiedProdServ, keyType) => {
+// UPDATE ONE ProdServ
+export const updateProdServ = async (body, params) => {
     let bitacora = BITACORA();
     let data = DATA();
 
     try {
         bitacora.process = "Modificar un producto y/o servicio";
         data.method = "PUT";
-        data.api = "/prodserv/:id";
+        data.api = "/prodserv";
         data.process = "Modificar un producto y/o servicio de la coleccion de cat_prod_Serv";
 
-        let query = {};
-
-        if (keyType === "IdInstitutoOK") {
-            query = {IdInstitutoOK: idProdServ};
-        } else if (keyType === "IdProdServOK") {
-            query = {IdProdServOK: idProdServ};
-        } else {
-            throw new Error(data.messageDEV);
-        }
+        let query = {
+            IdInstitutoOK: params.IdInstitutoOK,
+            IdProdServOK: params.IdProdServOK,
+        };
 
         const ProdServUpdated = await prodServs
-            .findOneAndUpdate(query, modifiedProdServ)
+            .findOneAndUpdate(query, body)
             .then((institute) => {
                 if (!institute) {
                     data.status = 404;
@@ -227,26 +217,21 @@ export const updateProdServ = async (idProdServ, modifiedProdServ, keyType) => {
 // *********** DELETE SECTION eCOMMERCE *********** //
 /////////////////////////////////////////////////////
 
-// DELETE ONE eCOMMERCE
-export const deleteProdServ = async (idProdServ, keyType) => {
+// DELETE ONE ProdServ
+export const deleteProdServ = async (params) => {
     let bitacora = BITACORA();
     let data = DATA();
 
     try {
         bitacora.process = "Eliminar un producto y/o servicio";
         data.method = "DELETE";
-        data.api = "/prodserv/:id";
+        data.api = "/prodserv";
         data.process = "Eliminar un producto y/o servicio de la coleccion de cat_prod_serv";
 
-        let query = {};
-
-        if (keyType === "IdInstitutoOK") {
-            query = {IdInstitutoOK: idProdServ};
-        } else if (keyType === "IdProdServOK") {
-            query = {IdProdServOK: idProdServ};
-        } else {
-            throw new Error(data.messageDEV);
-        }
+        let query = {
+            IdInstitutoOK: params.IdInstitutoOK,
+            IdProdServOK: params.IdProdServOK,
+        };
 
         const ProdServDeleted = await prodServs
             .findOneAndDelete(query)

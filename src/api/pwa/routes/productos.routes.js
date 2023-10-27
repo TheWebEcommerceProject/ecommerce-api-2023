@@ -1,5 +1,5 @@
 import {Router} from "express";
-import * as prodServController from "../controllers/prodServ.controller";
+import * as prodServController from "../controllers/productos.controller";
 
 const router = Router();
 
@@ -7,15 +7,15 @@ const router = Router();
 
 // GET
 router.get("/", prodServController.getProdServAll);
-router.get("/:id", prodServController.getProdServOne);
+router.get("/one", prodServController.getProdServOne);
 
 // POST
 router.post("/", prodServController.addProdServ);
 
 // PUT
-router.put("/:id", prodServController.updateProdServ);
+router.put("/", prodServController.updateProdServ);
 
 // DELETE
-router.delete("/:id", prodServController.deleteProdServ);
+router.delete("/", prodServController.deleteProdServ);
 
 export default router;

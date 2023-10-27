@@ -26,6 +26,7 @@ const prodServSchemaPWA = new mongoose.Schema({
                             $date: {type: Date, default: Date.now}
                         },
                         UsuarioReg: {type: String},
+                        _id: false,
                     },
                 ],
             },
@@ -45,6 +46,7 @@ const prodServSchemaPWA = new mongoose.Schema({
                             $date: {type: Date, default: Date.now}
                         },
                         UsuarioReg: {type: String},
+                        _id: false,
                     },
                 ],
             },
@@ -70,6 +72,7 @@ const prodServSchemaPWA = new mongoose.Schema({
                                     $date: {type: Date, default: Date.now}
                                 },
                                 UsuarioReg: {type: String},
+                                _id: false,
                             },
                         ],
                     },
@@ -89,6 +92,7 @@ const prodServSchemaPWA = new mongoose.Schema({
                                     $date: {type: Date, default: Date.now}
                                 },
                                 UsuarioReg: {type: String},
+                                _id: false,
                             },
                         ],
                     },
@@ -117,6 +121,7 @@ const prodServSchemaPWA = new mongoose.Schema({
                                     $date: {type: Date, default: Date.now}
                                 },
                                 UsuarioReg: {type: String},
+                                _id: false,
                             },
                         ],
                     },
@@ -139,6 +144,7 @@ const prodServSchemaPWA = new mongoose.Schema({
                     $date: {type: Date, default: Date.now}
                 },
                 UsuarioReg: {type: String},
+                _id: false,
             },
         ],
     },

@@ -1,4 +1,4 @@
-import * as prodServServices from "../services/prodServ.service";
+import * as prodServServices from "../services/productos.services";
 
 ////////////////////////////////////////////////////
 // *********** GET SECTION eCOMMERCE *********** //
@@ -20,10 +20,9 @@ export const getProdServAll = async (req, res, next) => {
 export const getProdServOne = async (req, res, next) => {
     try {
 
-        const {id} = req.params;
-        const keyType = req.query.keyType || 'IdInstitutoOK';
+        const params = req.query;
 
-        const ProdServOne = await prodServServices.getProdServOne(id, keyType);
+        const ProdServOne = await prodServServices.getProdServOne(params);
 
         if (ProdServOne) {
             return res.status(ProdServOne.status).json(ProdServOne);
@@ -57,10 +56,10 @@ export const addProdServ = async (req, res, next) => {
 export const updateProdServ = async (req, res, next) => {
     try {
 
-        const {id} = req.params;
-        const keyType = req.query.keyType || 'IdInstitutoOK';
+        const params = req.query;
+        const body = req.body;
 
-        const ProdServUpdated = await prodServServices.updateProdServ(id, req.body, keyType);
+        const ProdServUpdated = await prodServServices.updateProdServ(body, params);
         if (ProdServUpdated) {
             return res.status(ProdServUpdated.status).json(ProdServUpdated);
         }
@@ -77,10 +76,9 @@ export const updateProdServ = async (req, res, next) => {
 export const deleteProdServ = async (req, res, next) => {
     try {
 
-        const {id} = req.params;
-        const keyType = req.query.keyType || 'IdInstitutoOK';
+        const params = req.query;
 
-        const ProdServDeleted = await prodServServices.deleteProdServ(id, keyType);
+        const ProdServDeleted = await prodServServices.deleteProdServ(params);
         if (ProdServDeleted) {
             return res.status(ProdServDeleted.status).json(ProdServDeleted);
         }
