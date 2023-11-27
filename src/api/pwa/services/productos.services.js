@@ -217,6 +217,66 @@ export const addProdServEstatus = async (params, newCatProdServEstatus) => {
     }
 };
 
+// ADD NEW ESTATUS ProdServ
+export const addInfoAd = async (params, newCatProdServInfoAd) => {
+    let bitacora = BITACORA();
+    let data = DATA();
+
+    try {
+        bitacora.process = "Agregar nueva informacion adicional";
+        data.method = "POST";
+        data.api = "/infoad";
+        data.process =
+            "Agregar un nuevo infoad en el documento.";
+
+        let query = {
+            IdInstitutoOK: params.IdInstitutoOK,
+            IdProdServOK: params.IdProdServOK,
+        };
+
+        // Primero encontrar el documento que se quiere agregar el nuevo estatus
+        const existingDocument = await prodServs.findOne(query);
+
+        // Agregar el nuevo estatus al documento
+        existingDocument.cat_prod_serv_info_ad.push(newCatProdServInfoAd);
+
+        // Actualizar el documento con el nuevo estatus
+        const ProdServAdded = await prodServs
+            .findOneAndUpdate(query, existingDocument)
+            .then((prodServ) => {
+                if (!prodServ) {
+                    data.status = 400;
+                    data.messageDEV =
+                        "La insercion del infoad en el documento <<NO>> tuvo exito";
+                    throw Error(data.messageDEV);
+                }
+
+                return prodServ;
+            });
+
+        //data.status = 200;
+        data.messageUSR =
+            "La insercion del infoad en el documento <<SI>> tuvo exito";
+        data.dataRes = ProdServAdded;
+        bitacora = AddMSG(bitacora, data, "OK", 201, true);
+
+        return OK(bitacora);
+    } catch (error) {
+        if (!data.status) data.status = error.statusCode;
+        let { message } = error;
+        if (!data.messageDEV) data.messageDEV = message;
+        if (data.dataRes.length === 0) data.dataRes = error;
+
+        data.messageUSR =
+            "La insercion del infoad en el documento <<NO>> tuvo exito";
+        bitacora = AddMSG(bitacora, data, "FAIL");
+
+        return FAIL(bitacora);
+    } finally {
+        //Haya o no haya error se ejecuta el finally
+    }
+};
+
 /////////////////////////////////////////////////////
 // *********** PUT SECTION eCOMMERCE *********** //
 /////////////////////////////////////////////////////
