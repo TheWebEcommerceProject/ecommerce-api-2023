@@ -11,6 +11,7 @@ router.get("/one", prodServController.getProdServOne);
 
 // POST
 router.post("/", prodServController.addProdServ);
+router.post("/estatus", prodServController.addProdServEstatus);
 
 // PUT
 router.put("/", prodServController.updateProdServ);

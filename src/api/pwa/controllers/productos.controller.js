@@ -48,6 +48,22 @@ export const addProdServ = async (req, res, next) => {
     }
 };
 
+// ADD ESTATUS eCOMMERCE
+export const addProdServEstatus = async (req, res, next) => {
+    try {
+
+        const params = req.query;
+        const body = req.body;
+
+        const ProdServAdded = await prodServServices.addProdServEstatus(params, body);
+        if (ProdServAdded) {
+            return res.status(ProdServAdded.status).json(ProdServAdded);
+        }
+    } catch (error) {
+        next(error);
+    }
+};
+
 /////////////////////////////////////////////////////
 // *********** PUT SECTION eCOMMERCE *********** //
 /////////////////////////////////////////////////////

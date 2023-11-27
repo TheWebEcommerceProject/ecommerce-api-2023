@@ -41,7 +41,7 @@ export const getProdServAll = async () => {
         return OK(bitacora);
     } catch (error) {
         if (!data.status) data.status = error.statusCode;
-        let {message} = error;
+        let { message } = error;
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
 
@@ -91,7 +91,7 @@ export const getProdServOne = async (params) => {
         return OK(bitacora);
     } catch (error) {
         if (!data.status) data.status = error.statusCode;
-        let {message} = error;
+        let { message } = error;
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
 
@@ -122,7 +122,7 @@ export const addProdServ = async (newProdServ) => {
             "Agregar un nuevo producto y/o servicio a la coleccion de cat_prod_serv";
 
         const ProdServAdded = await prodServs
-            .insertMany(newProdServ, {order: true})
+            .insertMany(newProdServ, { order: true })
             .then((prodServ) => {
                 if (!prodServ) {
                     data.status = 400;
@@ -143,12 +143,72 @@ export const addProdServ = async (newProdServ) => {
         return OK(bitacora);
     } catch (error) {
         if (!data.status) data.status = error.statusCode;
-        let {message} = error;
+        let { message } = error;
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
 
         data.messageUSR =
             "La insercion del producto y/o servicio en la base de datos <<NO>> tuvo exito";
+        bitacora = AddMSG(bitacora, data, "FAIL");
+
+        return FAIL(bitacora);
+    } finally {
+        //Haya o no haya error se ejecuta el finally
+    }
+};
+
+// ADD NEW ESTATUS ProdServ
+export const addProdServEstatus = async (params, newCatProdServEstatus) => {
+    let bitacora = BITACORA();
+    let data = DATA();
+
+    try {
+        bitacora.process = "Agregar un nuevo estado";
+        data.method = "POST";
+        data.api = "/estatus";
+        data.process =
+            "Agregar un nuevo estado en el documento.";
+
+        let query = {
+            IdInstitutoOK: params.IdInstitutoOK,
+            IdProdServOK: params.IdProdServOK,
+        };
+
+        // Primero encontrar el documento que se quiere agregar el nuevo estatus
+        const existingDocument = await prodServs.findOne(query);
+
+        // Agregar el nuevo estatus al documento
+        existingDocument.cat_prod_serv_estatus.push(newCatProdServEstatus);
+
+        // Actualizar el documento con el nuevo estatus
+        const ProdServAdded = await prodServs
+            .findOneAndUpdate(query, existingDocument)
+            .then((prodServ) => {
+                if (!prodServ) {
+                    data.status = 400;
+                    data.messageDEV =
+                        "La insercion del estado en el documento <<NO>> tuvo exito";
+                    throw Error(data.messageDEV);
+                }
+
+                return prodServ;
+            });
+
+        //data.status = 200;
+        data.messageUSR =
+            "La insercion del estado en el documento <<SI>> tuvo exito";
+        data.dataRes = ProdServAdded;
+        bitacora = AddMSG(bitacora, data, "OK", 201, true);
+
+        return OK(bitacora);
+    } catch (error) {
+        if (!data.status) data.status = error.statusCode;
+        let { message } = error;
+        if (!data.messageDEV) data.messageDEV = message;
+        if (data.dataRes.length === 0) data.dataRes = error;
+
+        data.messageUSR =
+            "La insercion del estado en el documento <<NO>> tuvo exito";
         bitacora = AddMSG(bitacora, data, "FAIL");
 
         return FAIL(bitacora);
@@ -199,7 +259,7 @@ export const updateProdServ = async (body, params) => {
         return OK(bitacora);
     } catch (error) {
         if (!data.status) data.status = error.statusCode;
-        let {message} = error;
+        let { message } = error;
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
 
@@ -255,7 +315,7 @@ export const deleteProdServ = async (params) => {
         return OK(bitacora);
     } catch (error) {
         if (!data.status) data.status = error.statusCode;
-        let {message} = error;
+        let { message } = error;
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
 
