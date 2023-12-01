@@ -134,3 +134,21 @@ export const deleteProdServ = async (req, res, next) => {
         next(error);
     }
 };
+
+/////////////////////////////////////////////////////
+// *********** PATCH SECTION eCOMMERCE *********** //
+/////////////////////////////////////////////////////
+
+export const patchProdServ = async (req, res, next) => {
+    try {
+
+        const { body, query } = req;
+
+        const ProdServUpdated = await prodServServices.patchProdServ(body, query);
+        if (ProdServUpdated) {
+            return res.status(ProdServUpdated.status).json(ProdServUpdated);
+        }
+    } catch (error) {
+        next(error);
+    }
+};

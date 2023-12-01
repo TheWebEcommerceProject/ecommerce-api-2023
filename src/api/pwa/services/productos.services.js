@@ -41,7 +41,7 @@ export const getProdServAll = async () => {
         return OK(bitacora);
     } catch (error) {
         if (!data.status) data.status = error.statusCode;
-        let { message } = error;
+        let {message} = error;
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
 
@@ -91,7 +91,7 @@ export const getProdServOne = async (params) => {
         return OK(bitacora);
     } catch (error) {
         if (!data.status) data.status = error.statusCode;
-        let { message } = error;
+        let {message} = error;
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
 
@@ -122,7 +122,7 @@ export const addProdServ = async (newProdServ) => {
             "Agregar un nuevo producto y/o servicio a la coleccion de cat_prod_serv";
 
         const ProdServAdded = await prodServs
-            .insertMany(newProdServ, { order: true })
+            .insertMany(newProdServ, {order: true})
             .then((prodServ) => {
                 if (!prodServ) {
                     data.status = 400;
@@ -143,7 +143,7 @@ export const addProdServ = async (newProdServ) => {
         return OK(bitacora);
     } catch (error) {
         if (!data.status) data.status = error.statusCode;
-        let { message } = error;
+        let {message} = error;
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
 
@@ -203,7 +203,7 @@ export const addProdServEstatus = async (params, newCatProdServEstatus) => {
         return OK(bitacora);
     } catch (error) {
         if (!data.status) data.status = error.statusCode;
-        let { message } = error;
+        let {message} = error;
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
 
@@ -263,7 +263,7 @@ export const addInfoAd = async (params, newCatProdServInfoAd) => {
         return OK(bitacora);
     } catch (error) {
         if (!data.status) data.status = error.statusCode;
-        let { message } = error;
+        let {message} = error;
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
 
@@ -323,7 +323,7 @@ export const addPresenta = async (params, newCatProdServPresenta) => {
         return OK(bitacora);
     } catch (error) {
         if (!data.status) data.status = error.statusCode;
-        let { message } = error;
+        let {message} = error;
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
 
@@ -379,7 +379,7 @@ export const updateProdServ = async (body, params) => {
         return OK(bitacora);
     } catch (error) {
         if (!data.status) data.status = error.statusCode;
-        let { message } = error;
+        let {message} = error;
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
 
@@ -435,12 +435,67 @@ export const deleteProdServ = async (params) => {
         return OK(bitacora);
     } catch (error) {
         if (!data.status) data.status = error.statusCode;
-        let { message } = error;
+        let {message} = error;
         if (!data.messageDEV) data.messageDEV = message;
         if (data.dataRes.length === 0) data.dataRes = error;
 
         data.messageUSR =
             "La eliminacion del producto y/o servicio en la base de datos <<NO>> tuvo exito";
+        bitacora = AddMSG(bitacora, data, "FAIL");
+
+        return FAIL(bitacora);
+    } finally {
+        //Haya o no haya error se ejecuta el finally
+    }
+};
+
+/////////////////////////////////////////////////////
+// *********** PATCH SECTION eCOMMERCE *********** //
+/////////////////////////////////////////////////////
+
+export const patchProdServ = async (informacionActualizada, params) => {
+    let bitacora = BITACORA();
+    let data = DATA();
+
+    try {
+        bitacora.process = "Actualizar parcialmente un producto y/o servicio";
+        data.method = "PATCH";
+        data.api = "/patch";
+        data.process = "Actualizar parcialmente un producto y/o servicio de la coleccion de cat_prod_serv";
+
+        let query = {
+            IdInstitutoOK: params.IdInstitutoOK,
+            IdProdServOK: params.IdProdServOK,
+        };
+
+        //Buscar el documento
+        const product = await prodServs.findOne(query);
+
+        //Realizacion la actualizacion parcial del documento
+        Object.assign(product, informacionActualizada);
+
+        const ProdServUpdated = await prodServs.findOneAndUpdate(query, product, {new: true}).then((product) => {
+            if (!product) {
+                data.status = 404;
+                data.messageDEV = "La actualizacion parcial del producto y/o servicio en la base de datos <<NO>> tuvo exito";
+                throw Error(data.messageDEV);
+            }
+            return product;
+        });
+
+        data.messageUSR = "La actualizacion parcial del producto y/o servicio en la base de datos <<SI>> tuvo exito";
+        data.dataRes = ProdServUpdated;
+        bitacora = AddMSG(bitacora, data, "OK", 200, true);
+
+        return OK(bitacora);
+    } catch (error) {
+        if (!data.status) data.status = error.statusCode;
+        let {message} = error;
+        if (!data.messageDEV) data.messageDEV = message;
+        if (data.dataRes.length === 0) data.dataRes = error;
+
+        data.messageUSR =
+            "La actualizacion parcial del producto y/o servicio en la base de datos <<NO>> tuvo exito";
         bitacora = AddMSG(bitacora, data, "FAIL");
 
         return FAIL(bitacora);

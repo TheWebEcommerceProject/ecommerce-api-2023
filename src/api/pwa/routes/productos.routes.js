@@ -21,4 +21,7 @@ router.put("/", prodServController.updateProdServ);
 // DELETE
 router.delete("/", prodServController.deleteProdServ);
 
+// PATCH
+router.patch("/patch", prodServController.patchProdServ);
+
 export default router;
