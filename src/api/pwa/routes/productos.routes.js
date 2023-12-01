@@ -13,6 +13,7 @@ router.get("/one", prodServController.getProdServOne);
 router.post("/", prodServController.addProdServ);
 router.post("/estatus", prodServController.addProdServEstatus);
 router.post("/infoad", prodServController.addInfoAd);
+router.post("/presenta", prodServController.addPresenta);
 
 // PUT
 router.put("/", prodServController.updateProdServ);
