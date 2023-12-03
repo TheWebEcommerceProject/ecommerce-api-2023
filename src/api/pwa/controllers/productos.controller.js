@@ -96,6 +96,22 @@ export const addPresenta = async (req, res, next) => {
     }
 };
 
+// ADD PRESENTA INFOVTA eCOMMERCE
+export const addPresentaInfoVTA = async (req, res, next) => {
+    try {
+
+        const params = req.query;
+        const body = req.body;
+
+        const ProdServAdded = await prodServServices.addPresentaInfoVTA(params, body);
+        if (ProdServAdded) {
+            return res.status(ProdServAdded.status).json(ProdServAdded);
+        }
+    } catch (error) {
+        next(error);
+    }
+};
+
 /////////////////////////////////////////////////////
 // *********** PUT SECTION eCOMMERCE *********** //
 /////////////////////////////////////////////////////
