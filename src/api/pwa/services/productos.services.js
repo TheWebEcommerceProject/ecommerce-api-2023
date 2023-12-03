@@ -394,6 +394,120 @@ export const addPresentaInfoVTA = async (params, newCatProdServPresentaInfoVTA) 
     }
 };
 
+// ADD NEW PRESENTA INFOAD ProdServ
+export const addPresentaInfoAD = async (params, newCatProdServPresentaInfoAD) => {
+    let bitacora = BITACORA();
+    let data = DATA();
+
+    try {
+        bitacora.process = "Agregar un nuevo subdocumento dentro del subdocumento de presenta";
+        data.method = "POST";
+        data.api = "/InfoAD";
+        data.process = "Agregar un nuevo subdocumento de InfoAD en el subdocumento de presenta.";
+
+        let query = {
+            IdInstitutoOK: params.IdInstitutoOK,
+            IdProdServOK: params.IdProdServOK,
+        };
+
+        // Primero encontrar el documento que se requiere agregar el nuevo subdocumento
+        const existingDocument = await prodServs.findOne(query);
+
+        //Filtrar para conocer el indice del subdocumento
+        const index = existingDocument.cat_prod_serv_presenta.findIndex(
+            (presenta) => presenta.IdPresentaOK === params.IdPresentaOK && presenta.IdPresentaBK === params.IdPresentaBK
+        );
+
+        // Agregar el nuevo subdocumento al documento encontrado
+        existingDocument.cat_prod_serv_presenta[index].cat_prod_serv_info_ad.push(newCatProdServPresentaInfoAD);
+
+        // Actualizar el documento con el nuevo subdocumento
+        const ProdServAdded = await prodServs.findOneAndUpdate(query, existingDocument).then((prodServ) => {
+            if (!prodServ) {
+                data.status = 400;
+                data.messageDEV = "La insercion del subdocumento en el subdocumento de PRESENTA <<NO>> tuvo exito";
+                throw Error(data.messageDEV);
+            }
+            return prodServ;
+        });
+
+        data.messageUSR = "La insercion del subdocumento en el subdocumento de PRESENTA <<SI>> tuvo exito";
+        data.dataRes = ProdServAdded;
+        bitacora = AddMSG(bitacora, data, "OK", 201, true);
+
+        return OK(bitacora);
+    } catch (error) {
+        if (!data.status) data.status = error.statusCode;
+        let { message } = error;
+        if (!data.messageDEV) data.messageDEV = message;
+        if (data.dataRes.length === 0) data.dataRes = error;
+
+        data.messageUSR = "La insercion del subdocumento en el subdocumento  de PRESENTA <<NO>> tuvo exito";
+        bitacora = AddMSG(bitacora, data, "FAIL");
+
+        return FAIL(bitacora);
+    } finally {
+        //Haya o no haya error se ejecuta el finally
+    }
+};
+
+// ADD NEW PRESENTA ARCHIVOS ProdServ
+export const addPresentaArchivos = async (params, newCatProdServPresentaArchivos) => {
+    let bitacora = BITACORA();
+    let data = DATA();
+
+    try {
+        bitacora.process = "Agregar un nuevo subdocumento dentro del subdocumento de presenta";
+        data.method = "POST";
+        data.api = "/Archivos";
+        data.process = "Agregar un nuevo subdocumento de Archivos en el subdocumento de presenta.";
+
+        let query = {
+            IdInstitutoOK: params.IdInstitutoOK,
+            IdProdServOK: params.IdProdServOK,
+        };
+
+        // Primero encontrar el documento que se requiere agregar el nuevo subdocumento
+        const existingDocument = await prodServs.findOne(query);
+
+        //Filtrar para conocer el indice del subdocumento
+        const index = existingDocument.cat_prod_serv_presenta.findIndex(
+            (presenta) => presenta.IdPresentaOK === params.IdPresentaOK && presenta.IdPresentaBK === params.IdPresentaBK
+        );
+
+        // Agregar el nuevo subdocumento al documento encontrado
+        existingDocument.cat_prod_serv_presenta[index].cat_prod_serv_archivos.push(newCatProdServPresentaArchivos);
+
+        // Actualizar el documento con el nuevo subdocumento
+        const ProdServAdded = await prodServs.findOneAndUpdate(query, existingDocument).then((prodServ) => {
+            if (!prodServ) {
+                data.status = 400;
+                data.messageDEV = "La insercion del subdocumento en el subdocumento de PRESENTA <<NO>> tuvo exito";
+                throw Error(data.messageDEV);
+            }
+            return prodServ;
+        });
+
+        data.messageUSR = "La insercion del subdocumento en el subdocumento de PRESENTA <<SI>> tuvo exito";
+        data.dataRes = ProdServAdded;
+        bitacora = AddMSG(bitacora, data, "OK", 201, true);
+
+        return OK(bitacora);
+    } catch (error) {
+        if (!data.status) data.status = error.statusCode;
+        let { message } = error;
+        if (!data.messageDEV) data.messageDEV = message;
+        if (data.dataRes.length === 0) data.dataRes = error;
+
+        data.messageUSR = "La insercion del subdocumento en el subdocumento  de PRESENTA <<NO>> tuvo exito";
+        bitacora = AddMSG(bitacora, data, "FAIL");
+
+        return FAIL(bitacora);
+    } finally {
+        //Haya o no haya error se ejecuta el finally
+    }
+};
+
 /////////////////////////////////////////////////////
 // *********** PUT SECTION eCOMMERCE *********** //
 ////////////////////////////////////////////////////
