@@ -508,6 +508,66 @@ export const addPresentaArchivos = async (params, newCatProdServPresentaArchivos
     }
 };
 
+// ADD NEW NEGOCIO ProdServ
+export const addNegocios = async (params, newCatProdServNegocio) => {
+    let bitacora = BITACORA();
+    let data = DATA();
+
+    try {
+        bitacora.process = "Agregar un nuevo subdocumento de presenta";
+        data.method = "POST";
+        data.api = "/negocio";
+        data.process =
+            "Agregar un nuevo subdocumento de presenta.";
+
+        let query = {
+            IdInstitutoOK: params.IdInstitutoOK,
+            IdProdServOK: params.IdProdServOK,
+        };
+
+        // Primero encontrar el documento que se quiere agregar el nuevo estatus
+        const existingDocument = await prodServs.findOne(query);
+
+        // Agregar el nuevo estatus al documento
+        existingDocument.cat_prod_serv_negocios.push(newCatProdServNegocio);
+
+        // Actualizar el documento con el nuevo estatus
+        const ProdServAdded = await prodServs
+            .findOneAndUpdate(query, existingDocument)
+            .then((prodServ) => {
+                if (!prodServ) {
+                    data.status = 400;
+                    data.messageDEV =
+                        "La insercion del subdocumento en el documento <<NO>> tuvo exito";
+                    throw Error(data.messageDEV);
+                }
+
+                return prodServ;
+            });
+
+        //data.status = 200;
+        data.messageUSR =
+            "La insercion del subdocumento en el documento <<SI>> tuvo exito";
+        data.dataRes = ProdServAdded;
+        bitacora = AddMSG(bitacora, data, "OK", 201, true);
+
+        return OK(bitacora);
+    } catch (error) {
+        if (!data.status) data.status = error.statusCode;
+        let { message } = error;
+        if (!data.messageDEV) data.messageDEV = message;
+        if (data.dataRes.length === 0) data.dataRes = error;
+
+        data.messageUSR =
+            "La insercion del subdocumento en el documento <<NO>> tuvo exito";
+        bitacora = AddMSG(bitacora, data, "FAIL");
+
+        return FAIL(bitacora);
+    } finally {
+        //Haya o no haya error se ejecuta el finally
+    }
+};
+
 /////////////////////////////////////////////////////
 // *********** PUT SECTION eCOMMERCE *********** //
 ////////////////////////////////////////////////////

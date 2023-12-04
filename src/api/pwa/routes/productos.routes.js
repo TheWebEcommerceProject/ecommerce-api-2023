@@ -17,6 +17,7 @@ router.post("/presenta", prodServController.addPresenta);
 router.post("/presenta/infovta", prodServController.addPresentaInfoVTA);
 router.post("/presenta/infoad", prodServController.addPresentaInfoAD);
 router.post("/presenta/archivos", prodServController.addPresentaArchivos);
+router.post("/negocios", prodServController.addNegocios);
 
 // PUT
 router.put("/", prodServController.updateProdServ);

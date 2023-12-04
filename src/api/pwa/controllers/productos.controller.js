@@ -144,6 +144,21 @@ export const addPresentaArchivos = async (req, res, next) => {
     }
 };
 
+// ADD NEGOCIO eCOMMERCE
+export const addNegocios = async (req, res, next) => {
+    try {
+
+        const params = req.query;
+        const body = req.body;
+
+        const ProdServAdded = await prodServServices.addNegocios(params, body);
+        if (ProdServAdded) {
+            return res.status(ProdServAdded.status).json(ProdServAdded);
+        }
+    } catch (error) {
+        next(error);
+    }
+};
 /////////////////////////////////////////////////////
 // *********** PUT SECTION eCOMMERCE *********** //
 /////////////////////////////////////////////////////
