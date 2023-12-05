@@ -514,11 +514,11 @@ export const addNegocios = async (params, newCatProdServNegocio) => {
     let data = DATA();
 
     try {
-        bitacora.process = "Agregar un nuevo subdocumento de presenta";
+        bitacora.process = "Agregar un nuevo negocio en el documento";
         data.method = "POST";
         data.api = "/negocio";
         data.process =
-            "Agregar un nuevo subdocumento de presenta.";
+            "Agregar un nuevo negocio al documento.";
 
         let query = {
             IdInstitutoOK: params.IdInstitutoOK,
