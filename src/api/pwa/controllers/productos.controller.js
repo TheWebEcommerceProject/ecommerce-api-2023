@@ -5,9 +5,9 @@ import * as prodServServices from "../services/productos.services";
 ////////////////////////////////////////////////////
 
 // GET ALL eCOMMERCE
-export const getProdServAll = async (req, res, next) => {
+export const getAllProdServ = async (req, res, next) => {
     try {
-        const ProdServAll = await prodServServices.getProdServAll();
+        const ProdServAll = await prodServServices.getAllProdServ();
         if (ProdServAll) {
             return res.status(ProdServAll.status).json(ProdServAll);
         }
@@ -17,12 +17,12 @@ export const getProdServAll = async (req, res, next) => {
 };
 
 // GET ONE eCOMMERCE
-export const getProdServOne = async (req, res, next) => {
+export const getOneProdServ = async (req, res, next) => {
     try {
 
         const params = req.query;
 
-        const ProdServOne = await prodServServices.getProdServOne(params);
+        const ProdServOne = await prodServServices.getOneProdServ(params);
 
         if (ProdServOne) {
             return res.status(ProdServOne.status).json(ProdServOne);
@@ -37,9 +37,9 @@ export const getProdServOne = async (req, res, next) => {
 /////////////////////////////////////////////////////
 
 // ADD eCOMMERCE
-export const addProdServ = async (req, res, next) => {
+export const addOneProdServ = async (req, res, next) => {
     try {
-        const ProdServAdded = await prodServServices.addProdServ(req.body);
+        const ProdServAdded = await prodServServices.addOneProdServ(req.body);
         if (ProdServAdded) {
             return res.status(ProdServAdded.status).json(ProdServAdded);
         }
@@ -48,129 +48,18 @@ export const addProdServ = async (req, res, next) => {
     }
 };
 
-// ADD ESTATUS eCOMMERCE
-export const addProdServEstatus = async (req, res, next) => {
-    try {
-
-        const params = req.query;
-        const body = req.body;
-
-        const ProdServAdded = await prodServServices.addProdServEstatus(params, body);
-        if (ProdServAdded) {
-            return res.status(ProdServAdded.status).json(ProdServAdded);
-        }
-    } catch (error) {
-        next(error);
-    }
-};
-
-// ADD INFOAD eCOMMERCE
-export const addInfoAd = async (req, res, next) => {
-    try {
-
-        const params = req.query;
-        const body = req.body;
-
-        const ProdServAdded = await prodServServices.addInfoAd(params, body);
-        if (ProdServAdded) {
-            return res.status(ProdServAdded.status).json(ProdServAdded);
-        }
-    } catch (error) {
-        next(error);
-    }
-};
-
-// ADD PRESENTA eCOMMERCE
-export const addPresenta = async (req, res, next) => {
-    try {
-
-        const params = req.query;
-        const body = req.body;
-
-        const ProdServAdded = await prodServServices.addPresenta(params, body);
-        if (ProdServAdded) {
-            return res.status(ProdServAdded.status).json(ProdServAdded);
-        }
-    } catch (error) {
-        next(error);
-    }
-};
-
-// ADD PRESENTA INFOVTA eCOMMERCE
-export const addPresentaInfoVTA = async (req, res, next) => {
-    try {
-
-        const params = req.query;
-        const body = req.body;
-
-        const ProdServAdded = await prodServServices.addPresentaInfoVTA(params, body);
-        if (ProdServAdded) {
-            return res.status(ProdServAdded.status).json(ProdServAdded);
-        }
-    } catch (error) {
-        next(error);
-    }
-};
-
-// ADD PRESENTA INFOAD eCOMMERCE
-export const addPresentaInfoAD = async (req, res, next) => {
-    try {
-
-        const params = req.query;
-        const body = req.body;
-
-        const ProdServAdded = await prodServServices.addPresentaInfoAD(params, body);
-        if (ProdServAdded) {
-            return res.status(ProdServAdded.status).json(ProdServAdded);
-        }
-    } catch (error) {
-        next(error);
-    }
-};
-
-// ADD PRESENTA ARCHIVOS eCOMMERCE
-export const addPresentaArchivos = async (req, res, next) => {
-    try {
-
-        const params = req.query;
-        const body = req.body;
-
-        const ProdServAdded = await prodServServices.addPresentaArchivos(params, body);
-        if (ProdServAdded) {
-            return res.status(ProdServAdded.status).json(ProdServAdded);
-        }
-    } catch (error) {
-        next(error);
-    }
-};
-
-// ADD NEGOCIO eCOMMERCE
-export const addNegocios = async (req, res, next) => {
-    try {
-
-        const params = req.query;
-        const body = req.body;
-
-        const ProdServAdded = await prodServServices.addNegocios(params, body);
-        if (ProdServAdded) {
-            return res.status(ProdServAdded.status).json(ProdServAdded);
-        }
-    } catch (error) {
-        next(error);
-    }
-};
 /////////////////////////////////////////////////////
 // *********** PUT SECTION eCOMMERCE *********** //
 /////////////////////////////////////////////////////
 
 // UPDATE eCOMMERCE
-export const updateProdServ = async (req, res, next) => {
+export const updateOneProdServ = async (req, res, next) => {
     try {
 
         const params = req.query;
         const body = req.body;
 
-        const ProdServUpdated = await prodServServices.updateProdServ(body, params);
+        const ProdServUpdated = await prodServServices.updateOneProdServ(body, params);
         if (ProdServUpdated) {
             return res.status(ProdServUpdated.status).json(ProdServUpdated);
         }
@@ -184,32 +73,14 @@ export const updateProdServ = async (req, res, next) => {
 /////////////////////////////////////////////////////
 
 // DELETE eCOMMERCE
-export const deleteProdServ = async (req, res, next) => {
+export const deleteOneProdServ = async (req, res, next) => {
     try {
 
         const params = req.query;
 
-        const ProdServDeleted = await prodServServices.deleteProdServ(params);
+        const ProdServDeleted = await prodServServices.deleteOneProdServ(params);
         if (ProdServDeleted) {
             return res.status(ProdServDeleted.status).json(ProdServDeleted);
-        }
-    } catch (error) {
-        next(error);
-    }
-};
-
-/////////////////////////////////////////////////////
-// *********** PATCH SECTION eCOMMERCE *********** //
-/////////////////////////////////////////////////////
-
-export const patchProdServ = async (req, res, next) => {
-    try {
-
-        const { body, query } = req;
-
-        const ProdServUpdated = await prodServServices.patchProdServ(body, query);
-        if (ProdServUpdated) {
-            return res.status(ProdServUpdated.status).json(ProdServUpdated);
         }
     } catch (error) {
         next(error);

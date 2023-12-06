@@ -6,26 +6,16 @@ const router = Router();
 // Este bloque crece por cada nueva API relacionada con eCommerce que agreguemos.
 
 // GET
-router.get("/", prodServController.getProdServAll);
-router.get("/one", prodServController.getProdServOne);
+router.get("/", prodServController.getAllProdServ);
+router.get("/one", prodServController.getOneProdServ);
 
 // POST
-router.post("/", prodServController.addProdServ);
-router.post("/estatus", prodServController.addProdServEstatus);
-router.post("/infoad", prodServController.addInfoAd);
-router.post("/presenta", prodServController.addPresenta);
-router.post("/presenta/infovta", prodServController.addPresentaInfoVTA);
-router.post("/presenta/infoad", prodServController.addPresentaInfoAD);
-router.post("/presenta/archivos", prodServController.addPresentaArchivos);
-router.post("/negocios", prodServController.addNegocios);
+router.post("/import", prodServController.addOneProdServ);
 
 // PUT
-router.put("/", prodServController.updateProdServ);
+router.put("/import", prodServController.updateOneProdServ);
 
 // DELETE
-router.delete("/", prodServController.deleteProdServ);
-
-// PATCH
-router.patch("/patch", prodServController.patchProdServ);
+router.delete("/import", prodServController.deleteOneProdServ);
 
 export default router;

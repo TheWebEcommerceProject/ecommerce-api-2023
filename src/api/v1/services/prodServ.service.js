@@ -1,7 +1,7 @@
 // Importar la clase modelo de productos y servicios
 import ProdServ from '../models/ProdServ';
 import boom from '@hapi/boom';
-import {OK, FAIL} from '../../../api/middlewares/resp.handler';
+import {OK, FAIL} from '../../../middlewares/resp.handler';
 
 // Metodo para obtener una lista de productos y servicios
 export const getProdServList = async () => {
