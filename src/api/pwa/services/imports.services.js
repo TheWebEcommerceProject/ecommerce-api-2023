@@ -33,42 +33,42 @@ export const updateProductMethod = async (bitacora, params, updateData) => {
         data.api = '/cat-prod-serv';
 
         // Convertir updateData a un array si no lo es
-        const dataArray = Array.isArray(updateData) ? updateData : [updateData];
+        //const dataArray = Array.isArray(updateData) ? updateData : [updateData];
 
         // Crear un objeto para guardar el producto actualizado
         let productoUpdated = null;
 
+        // Encuentra el documento principal usando IdInstitutoOK, IdNegocioOK e IdPagoOK
+        const filter = {
+            IdInstitutoOK: params.IdInstitutoOK,
+            IdProdServOK: params.IdProdServOK,
+        };
+
         // Recorrer el array de objetos
-        for (const obj of dataArray) {
-            for (const propiedad in obj) {
-                if (obj.hasOwnProperty(propiedad)) {
-                    const updateQuery = {};
-                    updateQuery[propiedad] = obj[propiedad];
+        for (const key in updateData) {
+            if (updateData.hasOwnProperty(key)) {
+                const value = updateData[key];
 
-                    try {
-                        productoUpdated = await CatProdServ.findOneAndUpdate(
-                            {
-                                IdInstitutoOK: params.IdInstitutoOK,
-                                IdProdServOK: params.IdProdServOK,
-                            },
-                            updateQuery,
-                            {new: true}
-                        );
+                const updateQuery = {$set: {[key]: value}};
 
-                        if (!productoUpdated) {
-                            console.error("No se encontró un documento para actualizar con ese ID,", params);
-                            data.status = 400;
-                            data.messageDEV = 'La Actualización de un Subdocumento del producto NO fue exitoso.';
-                            throw new Error(data.messageDEV);
-                        }
+                try {
+                    productoUpdated = await CatProdServ.findOneAndUpdate(
+                        filter,
+                        updateQuery,
+                        {new: true}
+                    );
 
-                        console.log("ciclo for de updateProductMethod")
-                    } catch (error) {
-                        console.error(error);
+                    if (!productoUpdated) {
+                        console.error("No se encontró un documento para actualizar con ese ID,", IdProdServOK);
                         data.status = 400;
-                        data.messageDEV = 'La Actualizacion de un Subdocumento del producto NO fue exitoso.';
+                        data.messageDEV = 'La Actualización de un Subdocumento del producto NO fue exitoso.';
                         throw new Error(data.messageDEV);
                     }
+                } catch (error) {
+                    console.error(error);
+                    data.status = 400;
+                    data.messageDEV = 'La Actualizacion de un Subdocumento del producto NO fue exitoso.';
+                    throw Error(data.messageDEV);
                 }
             }
         }
