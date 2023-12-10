@@ -18,4 +18,7 @@ router.put("/import", prodServController.updateOneProdServ);
 // DELETE
 router.delete("/import", prodServController.deleteOneProdServ);
 
+// PATCH
+router.patch("/import", prodServController.patchOneProdServ);
+
 export default router;

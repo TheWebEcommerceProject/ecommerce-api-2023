@@ -1,3 +1,4 @@
+import boom from '@hapi/boom';
 import * as prodServServices from "../services/productos.services";
 
 ////////////////////////////////////////////////////
@@ -5,9 +6,9 @@ import * as prodServServices from "../services/productos.services";
 ////////////////////////////////////////////////////
 
 // GET ALL eCOMMERCE
-export const getAllProdServ = async (req, res, next) => {
+export const GetAllProdServ = async (req, res, next) => {
     try {
-        const ProdServAll = await prodServServices.getAllProdServ();
+        const ProdServAll = await prodServServices.GetAllProdServ();
         if (ProdServAll) {
             return res.status(ProdServAll.status).json(ProdServAll);
         }
@@ -17,18 +18,18 @@ export const getAllProdServ = async (req, res, next) => {
 };
 
 // GET ONE eCOMMERCE
-export const getOneProdServ = async (req, res, next) => {
+export const GetOneProdServ = async (req, res, next) => {
     try {
 
         const params = req.query;
 
-        const ProdServOne = await prodServServices.getOneProdServ(params);
+        const ProdServOne = await prodServServices.GetOneProdServ(params);
 
         if (ProdServOne) {
             return res.status(ProdServOne.status).json(ProdServOne);
         }
     } catch (error) {
-        next(error);
+        next(boom.badImplementation(error));
     }
 };
 
@@ -37,11 +38,13 @@ export const getOneProdServ = async (req, res, next) => {
 /////////////////////////////////////////////////////
 
 // ADD eCOMMERCE
-export const addOneProdServ = async (req, res, next) => {
+export const AddOneProdServ = async (req, res, next) => {
     try {
-        const ProdServAdded = await prodServServices.addOneProdServ(req.body);
-        if (ProdServAdded) {
-            return res.status(ProdServAdded.status).json(ProdServAdded);
+        const producto = req.body;
+        const productAdded = await prodServServices.AddOneProdServ(producto);
+        if (productAdded) {
+            productAdded.session = null;
+            return res.status(productAdded.status).json(productAdded);
         }
     } catch (error) {
         next(error);
@@ -53,15 +56,16 @@ export const addOneProdServ = async (req, res, next) => {
 /////////////////////////////////////////////////////
 
 // UPDATE eCOMMERCE
-export const updateOneProdServ = async (req, res, next) => {
+export const UpdateOneProdServ = async (req, res, next) => {
     try {
-
+        //const productId = req.params.id;
         const params = req.query;
-        const body = req.body;
+        const updateData = req.body;
 
-        const ProdServUpdated = await prodServServices.updateOneProdServ(body, params);
-        if (ProdServUpdated) {
-            return res.status(ProdServUpdated.status).json(ProdServUpdated);
+        const productUpdated = await prodServServices.UpdateOneProdServ(params, updateData);
+        if (productUpdated) {
+            productUpdated.session = null;
+            return res.status(productUpdated.status).json(productUpdated);
         }
     } catch (error) {
         next(error);
@@ -73,14 +77,38 @@ export const updateOneProdServ = async (req, res, next) => {
 /////////////////////////////////////////////////////
 
 // DELETE eCOMMERCE
-export const deleteOneProdServ = async (req, res, next) => {
+export const DeleteOneProdServ = async (req, res, next) => {
+    try {
+        //const productId = req.params.id;
+        const params = req.query;
+        const productDeleted = await prodServServices.DeleteOneProdServ(params);
+        if (productDeleted) {
+            productDeleted.session = null;
+            return res.status(productDeleted.status).json(productDeleted);
+        }
+    } catch (error) {
+        next(error);
+    }
+};
+
+
+/////////////////////////////////////////////////////
+// *********** PATCH SECTION eCOMMERCE *********** //
+/////////////////////////////////////////////////////
+
+export const PatchOneProdServ = async (req, res, next) => {
     try {
 
+        //const { id } = req.params;
         const params = req.query;
+        const body = req.body;
+        //const keyType = req.query.keyType || 'OK';
 
-        const ProdServDeleted = await prodServServices.deleteOneProdServ(params);
-        if (ProdServDeleted) {
-            return res.status(ProdServDeleted.status).json(ProdServDeleted);
+        //const ProdServUpdated = await prodServServices.PatchOneProdServ(params, req.body, keyType);
+        const ProdServUpdated = await prodServServices.PatchOneProdServ(params, body);
+
+        if (ProdServUpdated) {
+            return res.status(ProdServUpdated.status).json(ProdServUpdated);
         }
     } catch (error) {
         next(error);
