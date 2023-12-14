@@ -5,9 +5,9 @@ import * as prodServServices from "../services/productos.services";
 ////////////////////////////////////////////////////
 
 // GET ALL eCOMMERCE
-export const getAllProdServ = async (req, res, next) => {
+export const GetAllProdServ = async (req, res, next) => {
     try {
-        const ProdServAll = await prodServServices.getAllProdServ();
+        const ProdServAll = await prodServServices.GetAllProdServ();
         if (ProdServAll) {
             return res.status(ProdServAll.status).json(ProdServAll);
         }
@@ -17,12 +17,12 @@ export const getAllProdServ = async (req, res, next) => {
 };
 
 // GET ONE eCOMMERCE
-export const getOneProdServ = async (req, res, next) => {
+export const GetOneProdServ = async (req, res, next) => {
     try {
 
         const params = req.query;
 
-        const ProdServOne = await prodServServices.getOneProdServ(params);
+        const ProdServOne = await prodServServices.GetOneProdServ(params);
 
         if (ProdServOne) {
             return res.status(ProdServOne.status).json(ProdServOne);
@@ -37,9 +37,9 @@ export const getOneProdServ = async (req, res, next) => {
 /////////////////////////////////////////////////////
 
 // ADD eCOMMERCE
-export const addOneProdServ = async (req, res, next) => {
+export const AddOneProdServ = async (req, res, next) => {
     try {
-        const ProdServAdded = await prodServServices.addOneProdServ(req.body);
+        const ProdServAdded = await prodServServices.AddOneProdServ(req.body);
         if (ProdServAdded) {
             return res.status(ProdServAdded.status).json(ProdServAdded);
         }
@@ -53,13 +53,13 @@ export const addOneProdServ = async (req, res, next) => {
 /////////////////////////////////////////////////////
 
 // UPDATE eCOMMERCE
-export const updateOneProdServ = async (req, res, next) => {
+export const UpdateOneProdServ = async (req, res, next) => {
     try {
 
         const params = req.query;
         const body = req.body;
 
-        const ProdServUpdated = await prodServServices.updateOneProdServ(body, params);
+        const ProdServUpdated = await prodServServices.UpdateOneProdServ(body, params);
         if (ProdServUpdated) {
             return res.status(ProdServUpdated.status).json(ProdServUpdated);
         }
@@ -73,12 +73,12 @@ export const updateOneProdServ = async (req, res, next) => {
 /////////////////////////////////////////////////////
 
 // DELETE eCOMMERCE
-export const deleteOneProdServ = async (req, res, next) => {
+export const DeleteOneProdServ = async (req, res, next) => {
     try {
 
         const params = req.query;
 
-        const ProdServDeleted = await prodServServices.deleteOneProdServ(params);
+        const ProdServDeleted = await prodServServices.DeleteOneProdServ(params);
         if (ProdServDeleted) {
             return res.status(ProdServDeleted.status).json(ProdServDeleted);
         }

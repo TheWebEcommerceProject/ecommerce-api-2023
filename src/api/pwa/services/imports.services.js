@@ -11,18 +11,18 @@ import {
 // *********** PATCH SECTION eCOMMERCE *********** //
 /////////////////////////////////////////////////////
 
-export const updateProduct = async (params, updateData) => {
+export const UpdateProduct = async (params, updateData) => {
     // Crear bitacora
     let bitacora = BITACORA();
 
     // Actualizar producto
-    let response = updateProductMethod(bitacora, params, updateData);
+    let response = UpdateProductMethod(bitacora, params, updateData);
 
     // Retornar respuesta
     return response;
 };
 
-export const updateProductMethod = async (bitacora, params, updateData) => {
+export const UpdateProductMethod = async (bitacora, params, updateData) => {
 
     let data = DATA();
 

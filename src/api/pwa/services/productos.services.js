@@ -12,7 +12,7 @@ import {
 ////////////////////////////////////////////////////
 
 // GET ALL ProdServs
-export const getAllProdServ = async () => {
+export const GetAllProdServ = async () => {
     let bitacora = BITACORA();
     let data = DATA();
 
@@ -56,7 +56,7 @@ export const getAllProdServ = async () => {
 };
 
 // GET ONE ProdServ
-export const getOneProdServ = async (params) => {
+export const GetOneProdServ = async (params) => {
     let bitacora = BITACORA();
     let data = DATA();
 
@@ -110,7 +110,7 @@ export const getOneProdServ = async (params) => {
 /////////////////////////////////////////////////////
 
 // ADD NEW ProdServ
-export const addOneProdServ = async (newProdServ) => {
+export const AddOneProdServ = async (newProdServ) => {
     let bitacora = BITACORA();
     let data = DATA();
 
@@ -162,7 +162,7 @@ export const addOneProdServ = async (newProdServ) => {
 ////////////////////////////////////////////////////
 
 // UPDATE ONE ProdServ
-export const updateOneProdServ = async (body, params) => {
+export const UpdateOneProdServ = async (body, params) => {
     let bitacora = BITACORA();
     let data = DATA();
 
@@ -218,7 +218,7 @@ export const updateOneProdServ = async (body, params) => {
 /////////////////////////////////////////////////////
 
 // DELETE ONE ProdServ
-export const deleteOneProdServ = async (params) => {
+export const DeleteOneProdServ = async (params) => {
     let bitacora = BITACORA();
     let data = DATA();
 
