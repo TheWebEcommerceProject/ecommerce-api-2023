@@ -7,7 +7,7 @@ const router = Router();
 
 // GET
 router.get("/", prodServController.GetAllProdServ);
-router.get("/one", prodServController.GetOneProdServ);
+router.get("/one?", prodServController.GetOneProdServ);
 
 // POST
 router.post("/import", prodServController.AddOneProdServ);
